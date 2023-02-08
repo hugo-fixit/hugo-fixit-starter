@@ -1,0 +1,33 @@
+name: Update theme
+
+# Controls when the workflow will run
+on:
+  schedule:
+    # Update theme automatically everyday at 00:00 UTC
+    - cron: "0 0 * * *"
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  Update-FixIt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: latest
+          extended: true
+
+      - name: Update theme
+        run: hugo mod get -u github.com/hugo-fixit/FixIt
+
+      - name: Tidy go.mod, go.sum
+        run: hugo mod tidy
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: ':arrow_up: Chore(theme): update FixIt version'
+          commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'

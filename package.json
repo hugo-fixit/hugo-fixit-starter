@@ -1,0 +1,22 @@
+{
+  "name": "hugo-fixit-blog-go",
+  "version": "1.0.0",
+  "description": "This is a quick start template for Hugo theme [FixIt](https://github.com/hugo-fixit/FixIt). It uses [Hugo submodule](https://gohugo.io/hugo-modules/) feature to load the theme.",
+  "main": "index.js",
+  "scripts": {
+    "build": "hugo -v --gc --minify",
+    "server": "hugo server -D --disableFastRender --navigateToChanged --bind 0.0.0.0",
+    "server:production": "npm run server -- --environment production",
+    "update:theme": "hugo mod get -u github.com/hugo-fixit/FixIt && hugo mod tidy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugo-fixit/hugo-fixit-blog-go.git"
+  },
+  "author": "Lruihao (https://github.com/Lruihao)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hugo-fixit/hugo-fixit-blog-go/issues"
+  },
+  "homepage": "https://github.com/hugo-fixit/hugo-fixit-blog-go#readme"
+}

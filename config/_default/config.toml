@@ -1,0 +1,19 @@
+# -------------------------------------------------------------------------------------
+# Hugo Configuration
+# See: https://gohugo.io/getting-started/configuration/
+# -------------------------------------------------------------------------------------
+
+title = "Hugo FixIt Blog"
+baseURL = "https://hugo-fixit.github.io/hugo-fixit-blog-go/"
+# theme = "FixIt"
+defaultContentLanguage = "en"
+languageCode = "en"
+hasCJKLanguage = true
+enableRobotsTXT = true
+enableEmoji = true
+enableGitInfo = true
+relativeURLs = false
+buildDrafts = false
+summaryLength = 150
+# ignore some build errors
+ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
