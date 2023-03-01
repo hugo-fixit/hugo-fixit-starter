@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Cache Hugo resources
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: cache-hugo-resources
         with:
@@ -34,7 +34,7 @@ jobs:
       - run: go version
 
       - name: Cache Go Modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             ~/.cache/go-build
