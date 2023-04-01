@@ -11,7 +11,6 @@ It comes with a basic theme structure and configuration. GitHub action has been 
 
 ```bash
 ▸ .github/       # GitHub configuration
-▸ .shell/        # shell commands for hugo project, entrance: hugo_main.sh
 ▸ archetypes/    # page archetypes (like scaffolds of archetypes)
 ▸ assets/        # css, js, third-party libraries etc.
 ▸ config/        # configuration files
@@ -26,56 +25,61 @@ It comes with a basic theme structure and configuration. GitHub action has been 
 
 ## Quick Start
 
-Just install latest version of [Hugo(>= 0.89.0)](https://gohugo.io/installation/) for your OS (Windows, Linux, macOS).
+## Quick Start
+
+### Prerequisites
+
+Just install latest version of [Hugo(>= 0.109.0)](https://gohugo.io/installation/) for your OS (Windows, Linux, macOS).
+
+### Clone Template
+
+Clone with your own repository url
 
 ```bash
-# Clone with your own repository url
 git clone --recursive git@github.com:hugo-fixit/hugo-fixit-blog-go.git
 ```
 
-There are two ways to start this blog.
-
-### NPM
+Afterwards you can upgrade the theme with the following command:
 
 ```bash
-# build the blog
-npm run build
-# run a local debugging server with watch
-npm run server
-# run a local debugging server in production environment
-npm run server:production
-# update theme submodules
-npm run update:theme
+# Update theme manually
+hugo mod get -u github.com/hugo-fixit/FixIt
+hugo mod tidy
 ```
 
-### Hugo
+### Launching the Site
 
 ```bash
 # Development environment
 hugo server --disableFastRender --navigateToChanged --bind 0.0.0.0
 # Production environment
 hugo server --disableFastRender --navigateToChanged --environment production --bind 0.0.0.0
-# Update theme manually
-hugo mod get -u github.com/hugo-fixit/FixIt
-hugo mod tidy
 ```
 
-In addition, you can run `hugo_main.sh` to choice frequently-used Hugo commands:
+<details>
+  <summary>Start via NPM script</summary>
+
+  ```bash
+  # build the blog
+  npm run build
+  # run a local debugging server with watch
+  npm run server
+  # run a local debugging server in production environment
+  npm run server:production
+  # update theme submodules
+  npm run update:theme
+  ```
+
+</details>
+
+### Build the Site
+
+When your site is ready to deploy, run the following command:
 
 ```bash
-cd .shell && sh hugo_main.sh
+hugo
 ```
 
-```text
---------------Hugo Admin--------------
-Please enter the serial number to work
---------------------------------------
-1. post
-2. server
-3. server:production
-4. build
-5. submodule-sync
-6. push
---------------------------------------
-Press Ctrl+C to stop
-```
+For a complete quick start, see this [page](https://fixit.lruihao.cn/documentation/getting-started/).
+
+<!-- This project was generated with [hugo-fixit-blog-go](https://github.com/hugo-fixit/hugo-fixit-blog-g0). Documentation about the original structure can be found [here](https://github.com/hugo-fixit/hugo-fixit-blog-go#directory-structure). -->

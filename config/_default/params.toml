@@ -103,6 +103,12 @@ disableThemeInject = false
     # whether to use typeit animation for subtitle name
     typeit = false
 
+# FixIt 0.2.18 | NEW Breadcrumb config
+[breadcrumb]
+  enable = false
+  sticky = false
+  showHome = false
+
 # Footer config
 [footer]
   enable = true
@@ -293,6 +299,8 @@ disableThemeInject = false
 
 # FixIt 0.2.0 | CHANGED Page config
 [page]
+  # FixIt 0.2.18 | NEW whether to enable the author's avatar of the post
+  authorAvatar = true
   # FixIt 0.2.0 | NEW whether to hide a page from home page
   hiddenFromHomePage = false
   # FixIt 0.2.0 | NEW whether to hide a page from search results
@@ -300,6 +308,7 @@ disableThemeInject = false
   # FixIt 0.2.0 | NEW whether to enable twemoji
   twemoji = false
   # whether to enable lightgallery
+  # FixIt 0.2.18 | CHANGED if set to "force", images in the content will be forced to shown as the gallery.
   lightgallery = false
   # FixIt 0.2.0 | NEW whether to enable the ruby extended syntax
   ruby = true
@@ -315,8 +324,6 @@ disableThemeInject = false
   rssFullText = false
   # FixIt 0.2.13 | NEW Page style ["narrow", "normal", "wide", ...]
   pageStyle = "normal"
-  # FixIt 0.2.14 | NEW Gravatar is force-used as the author's avatar
-  gravatarForce = false
   # FixIt 0.2.17 | CHANGED Auto Bookmark Support
   # If true, save the reading progress when closing the page.
   autoBookmark = false
@@ -403,6 +410,8 @@ disableThemeInject = false
     # position relative to post footer, optional values: ["before", "after"]
     position = "after"
     # comment = "Buy me a coffee"
+    # FixIt 0.2.18 | NEW display mode of QR code images, optional values: ["static", "fixed"], default: `static`
+    mode = "static"
     [page.reward.ways]
       # wechatpay = "/images/wechatpay.png"
       # alipay = "/images/alipay.png"
@@ -451,10 +460,20 @@ disableThemeInject = false
       sendBtn = ""
       editorTravel = true
       flatMode = "auto"
-      maxNesting = 3
       # FixIt 0.2.17 | CHANGED enable lightgallery support
       lightgallery = false
       locale = "" # FixIt 0.2.15 | NEW
+      # FixIt 0.2.18 | NEW
+      emoticons = ""
+      nestMax = 2
+      nestSort = "DATE_ASC" # ["DATE_ASC", "DATE_DESC", "VOTE_UP_DESC"]
+      vote = true
+      voteDown = false
+      uaBadge = true
+      listSort = true
+      imgUpload = true
+      preview = true
+      versionCheck = true
     # FixIt 0.1.1 | NEW Disqus comment config (https://disqus.com)
     [page.comment.disqus]
       enable = false
@@ -474,7 +493,8 @@ disableThemeInject = false
       appKey = ""
       placeholder = ""
       avatar = "mp"
-      meta= ""
+      meta = ""
+      requiredFields = ""
       pageSize = 10
       lang = ""
       visitor = true
@@ -556,6 +576,7 @@ disableThemeInject = false
       category = ""
       categoryId = ""
       mapping = ""
+      strict = "0" # FixIt NEW | 0.2.18
       term = ""
       reactionsEnabled = "1"
       emitMetadata = "0"
@@ -594,11 +615,13 @@ disableThemeInject = false
   cursorChar = "|"
   # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
   duration = -1
+  # FixIt 0.2.18 | NEW whether your strings will continuously loop after completing
+  loop = false
 
 # FixIt 0.2.15 | NEW Mermaid config
 [mermaid]
-  # For values, see https://mermaid-js.github.io/mermaid/#/Setup?id=theme
-  themes = ["neutral", "dark"]
+  # For values, see https://mermaid.js.org/config/theming.html#available-themes
+  themes = ["default", "dark"]
 
 # FixIt 0.2.12 | NEW PanguJS config
 [pangu]
@@ -700,6 +723,8 @@ disableThemeInject = false
 
 # FixIt 0.2.14 | NEW Gravatar config
 [gravatar]
+  # FixIt 0.2.18 | NEW Depends on the author's email, if the author's email is not set, the local avatar will be used
+  enable = true
   # Gravatar host, default: "www.gravatar.com"
   host = "gravatar.loli.net" # ["cn.gravatar.com", "gravatar.loli.net", ...]
   style = "" # ["", "mp", "identicon", "monsterid", "wavatar", "retro", "blank", "robohash"]
