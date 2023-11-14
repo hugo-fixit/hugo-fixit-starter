@@ -1,13 +1,12 @@
-# Hugo FixIt Blog Template (Go)
+# Hugo FixIt 博客模板（Go）
 
-This is a quick start template for Hugo theme [FixIt](https://github.com/hugo-fixit/FixIt). It uses [Hugo Modules](https://gohugo.io/hugo-modules/) feature to load the theme.
+👉 中文 | [English](README.en.md)
 
-It comes with a basic theme structure and configuration. GitHub action has been set up to deploy the theme to a public GitHub page automatically. Also, there's a cron job to update the theme automatically everyday.
+这是 Hugo 主题 [FixIt](https://github.com/hugo-fixit/FixIt) 的快速启动模板。它使用 [Hugo 模块](https://gohugo.io/hugo-modules/) 功能加载主题。
 
-1. Click *Use this template*, and create your repository on GitHub.
-2. Once the repository is created, just clone and enjoy it!
+它提供了基本的主题结构和配置。已经设置了 GitHub Actions，可以自动部署博客到 GitHub Pages。此外，还有一个定时任务，每天自动更新主题。
 
-## Directory structure
+## 目录结构
 
 ```bash
 ▸ .github/       # GitHub configuration
@@ -23,63 +22,75 @@ It comes with a basic theme structure and configuration. GitHub action has been 
 ▸ go.sum
 ```
 
-## Quick Start
+## 快速入门
 
-## Quick Start
+完整的快速入门，请参阅此 [页面](https://fixit.lruihao.cn/documentation/getting-started/)。
 
-### Prerequisites
+### 准备
 
-Just install latest version of [Hugo(>= 0.109.0)](https://gohugo.io/installation/) for your OS (Windows, Linux, macOS).
+[Hugo](https://gohugo.io/installation/): >= 0.109.0 (extended version)
 
-### Clone Template
+### 使用模板
 
-Clone with your own repository url
+1. 点击 **Use this template**，在 GitHub 上创建你的存储库。
 
-```bash
-git clone --recursive git@github.com:hugo-fixit/hugo-fixit-blog-go.git
-```
+    <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-blog-git/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
 
-Afterwards you can upgrade the theme with the following command:
+2. 存储库创建后，只需克隆并享受吧！
 
-```bash
-# Update theme manually
-hugo mod get -u github.com/hugo-fixit/FixIt
-hugo mod tidy
-```
+    ```bash
+    # 使用你自己的存储库 URL 进行克隆
+    git clone --recursive https://github.com/<your_name>/<your_blog_repo>.git
+    ```
 
-### Launching the Site
+### 启动站点
 
 ```bash
-# Development environment
-hugo server --disableFastRender --navigateToChanged --bind 0.0.0.0
-# Production environment
-hugo server --disableFastRender --navigateToChanged --environment production --bind 0.0.0.0
+# 开发环境
+hugo server
+# 生产环境
+hugo server -e production
 ```
 
-<details>
-  <summary>Start via NPM script</summary>
+### 构建站点
 
-  ```bash
-  # build the blog
-  npm run build
-  # run a local debugging server with watch
-  npm run server
-  # run a local debugging server in production environment
-  npm run server:production
-  # update theme submodules
-  npm run update:theme
-  ```
-
-</details>
-
-### Build the Site
-
-When your site is ready to deploy, run the following command:
+当你的站点准备部署时，运行以下命令：
 
 ```bash
 hugo
 ```
 
-For a complete quick start, see this [page](https://fixit.lruihao.cn/documentation/getting-started/).
+### 更新主题
 
-<!-- This project was generated with [hugo-fixit-blog-go](https://github.com/hugo-fixit/hugo-fixit-blog-g0). Documentation about the original structure can be found [here](https://github.com/hugo-fixit/hugo-fixit-blog-go#directory-structure). -->
+之后，你可以使用以下命令升级主题：
+
+```bash
+# 手动更新主题
+hugo mod get -u github.com/hugo-fixit/FixIt@master
+hugo mod tidy
+```
+
+<details>
+  <summary>通过 NPM 脚本启动</summary>
+
+  ```bash
+  # 构建博客
+  npm run build
+  # 运行带有监视的本地调试服务器
+  npm run server
+  # 在生产环境中运行本地调试服务器
+  npm run server:production
+  # 更新主题子模块
+  npm run update:theme
+  ```
+
+</details>
+
+## 故障排除
+
+<details>
+  <summary>remote: Permission to git denied to github-actions[bot].</summary>
+  转到 Setting => Actions => General => Workflow permissions => 选中 "Read and write permissions"。
+</details>
+
+<!-- 此项目是使用 [hugo-fixit-blog-go](https://github.com/hugo-fixit/hugo-fixit-blog-go) 生成的。关于原始结构的文档可以在 [这里](https://github.com/hugo-fixit/hugo-fixit-blog-go#directory-structure) 找到。 -->

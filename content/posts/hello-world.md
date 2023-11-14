@@ -21,33 +21,50 @@ Head to the documentation page linked below for a complete guidence to get start
 
 ## Quick Start
 
+For a complete quick start, see this [page](https://fixit.lruihao.cn/documentation/getting-started/).
+
 ### Prerequisites
 
-Just install latest version of [Hugo(>= 0.109.0)](https://gohugo.io/installation/) for your OS (Windows, Linux, macOS).
+[Hugo](https://gohugo.io/installation/): >= 0.109.0 (extended version)
 
-### Clone Template
+### Use this Template
 
-Clone with your own repository url
+1. Click **Use this template**, and create your repository on GitHub.
 
-```bash
-git clone --recursive git@github.com:hugo-fixit/hugo-fixit-blog-go.git
-```
+    <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-blog-git/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
 
-Afterwards you can upgrade the theme with the following command:
+2. Once the repository is created, just clone and enjoy it!
 
-```bash
-# Update theme manually
-hugo mod get -u github.com/hugo-fixit/FixIt
-hugo mod tidy
-```
+    ```bash
+    # Clone with your own repository url
+    git clone --recursive https://github.com/<your_name>/<your_blog_repo>.git
+    ```
 
 ### Launching the Site
 
 ```bash
 # Development environment
-hugo server --disableFastRender --navigateToChanged --bind 0.0.0.0
+hugo server
 # Production environment
-hugo server --disableFastRender --navigateToChanged --environment production --bind 0.0.0.0
+hugo server -e production
+```
+
+### Build the Site
+
+When your site is ready to deploy, run the following command:
+
+```bash
+hugo
+```
+
+### Update Theme
+
+Afterwards you can upgrade the theme with the following command:
+
+```bash
+# Update theme manually
+hugo mod get -u github.com/hugo-fixit/FixIt@master
+hugo mod tidy
 ```
 
 <details>
@@ -66,16 +83,8 @@ hugo server --disableFastRender --navigateToChanged --environment production --b
 
 </details>
 
-### Build the Site
+## Feedback
 
-When your site is ready to deploy, run the following command:
+Whether it's questions, ideas, bugs or pull requests, all feedback is welcome!
 
-```bash
-hugo
-```
-
-For a complete quick start, see this [page](https://fixit.lruihao.cn/documentation/getting-started/).
-
-## Questions, ideas, bugs, pull requests
-
-All feedback is welcome! Head over to the [issues](https://github.com/hugo-fixit/FixIt/issues) or [discussions](https://github.com/hugo-fixit/FixIt/discussions) tracker.
+Head over to the [issues](https://github.com/hugo-fixit/FixIt/issues) or [discussions](https://github.com/hugo-fixit/FixIt/discussions) tracker.
