@@ -1,16 +1,17 @@
 # -------------------------------------------------------------------------------------
 # Menu Configuration
-# See: https://fixit.lruihao.cn/theme-documentation-basics/#menu-advanced-configuration
+# See: https://fixit.lruihao.cn/documentation/basics/#menu-configuration
 # -------------------------------------------------------------------------------------
 
 [[main]]
-  identifier = "posts"
+  identifier = "archives"
+  parent = ""
   # you can add extra information before the name (HTML format is supported), such as icons
   pre = ""
   # you can add extra information after the name (HTML format is supported), such as icons
   post = ""
-  name = "Posts"
-  url = "/posts/"
+  name = "Archives"
+  url = "/archives/"
   # title will be shown when you hover on this menu link
   title = ""
   weight = 1
@@ -26,6 +27,7 @@
     type = ""
 [[main]]
   identifier = "categories"
+  parent = ""
   pre = ""
   post = ""
   name = "Categories"
@@ -33,9 +35,10 @@
   title = ""
   weight = 2
   [main.params]
-    icon = "fa-solid fa-th"
+    icon = "fa-solid fa-folder-tree"
 [[main]]
   identifier = "tags"
+  parent = ""
   pre = ""
   post = ""
   name = "Tags"

@@ -11,12 +11,10 @@ description = "This is my new Hugo FixIt site"
 keywords = ["Hugo", "FixIt"]
 # site default theme ["light", "dark", "auto"]
 defaultTheme = "auto"
-# public git repo url only then enableGitInfo is true
-gitRepo = ""
-# FixIt 0.1.1 | NEW which hash function used for SRI, when empty, no SRI is used
+# which hash function used for SRI, when empty, no SRI is used
 # ["sha256", "sha384", "sha512", "md5"]
 fingerprint = ""
-# FixIt 0.2.0 | NEW date format
+# NEW date format
 dateFormat = "2006-01-02"
 # website images for Open Graph and Twitter Cards
 images = []
@@ -24,11 +22,39 @@ images = []
 enablePWA = false
 # FixIt 0.2.14 | NEW whether to add external Icon for external links automatically
 externalIcon = false
+# FixIt 0.3.0 | NEW whether to reverse the order of the navigation menu
+navigationReverse = false
+# FixIt 0.3.0 | NEW whether to add site title to the title of every page
+# remember to set up your site title in `hugo.toml` (e.g. title = "title")
+withSiteTitle = true
+# FixIt 0.3.0 | NEW title delimiter when the site title is be added to the title of every page
+titleDelimiter = "-"
+# FixIt 0.3.0 | NEW whether to add site subtitle to the title of index page
+# remember to set up your site subtitle by `params.header.subtitle.name`
+indexWithSubtitle = false
 # FixIt 0.2.14 | NEW FixIt will, by default, inject a theme meta tag in the HTML head on the home page only.
 # You can turn it off, but we would really appreciate if you don’t, as this is a good way to watch FixIt's popularity on the rise.
 disableThemeInject = false
 
-# FixIt 0.2.0 | NEW App icon config
+# Author Configuration
+[author]
+  name = "Lruihao"
+  email = "1024@lruihao.cn"
+  link = "https://github.com/Lruihao"
+  avatar = ""
+
+# FixIt 0.3.0 | NEW public Git repository information only then enableGitInfo is true
+[gitInfo]
+  # e.g. "https://github.com/hugo-fixit/docs"
+  repo = ""
+  branch = "main"
+  # the content directory path relative to the root of the repository
+  dir = "content"
+  # the issue template for reporting issue of the posts
+  # available template params: {title} {URL} {sourceURL}
+  issueTpl = "title=[BUG]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|URL|{URL}|%0A|Filename|{sourceURL}|"
+
+# App icon config
 [app]
   # optional site title override for the app when added to an iOS home screen or Android launcher
   title = "Hugo FixIt Blog"
@@ -45,22 +71,22 @@ disableThemeInject = false
     light = "#f8f8f8"
     dark = "#252627"
 
-# FixIt 0.2.0 | NEW Search config
+# Search config
 [search]
   enable = true
-  # type of search engine ["lunr", "algolia", "fuse"]
-  type = "lunr"
+  # type of search engine ["algolia", "fuse"]
+  type = "fuse"
   # max index length of the chunked content
   contentLength = 4000
   # placeholder of the search bar
   placeholder = ""
-  # FixIt 0.2.1 | NEW max number of results length
+  # max number of results length
   maxResultLength = 10
-  # FixIt 0.2.3 | NEW snippet length of the result
+  # snippet length of the result
   snippetLength = 30
-  # FixIt 0.2.1 | NEW HTML tag name of the highlight part in results
+  # HTML tag name of the highlight part in results
   highlightTag = "em"
-  # FixIt 0.2.4 | NEW whether to use the absolute URL based on the baseURL in search index
+  # whether to use the absolute URL based on the baseURL in search index
   absoluteURL = false
   [search.algolia]
     index = ""
@@ -84,17 +110,17 @@ disableThemeInject = false
   desktopMode = "sticky"
   # FixIt 0.2.13 | CHANGED mobile header mode ["sticky", "normal", "auto"]
   mobileMode = "auto"
-  # FixIt 0.2.0 | NEW Header title config
+  # Header title config
   [header.title]
     # URL of the LOGO
-    logo = "/hugo-fixit-blog-go/fixit.min.svg"
+    logo = "/hugo-fixit-blog-go/images/fixit.min.svg"
     # title name
-    name = "Hugo FixIt Blog"
+    name = ""
     # you can add extra information before the name (HTML format is supported), such as icons
     pre = ""
     # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
-    # FixIt 0.2.5 | NEW whether to use typeit animation for title name
+    # whether to use typeit animation for title name
     typeit = false
   # FixIt 0.2.12 | NEW Header subtitle config
   [header.subtitle]
@@ -115,22 +141,23 @@ disableThemeInject = false
   # FixIt 0.2.17 | CHANGED Custom content (HTML format is supported)
   # For advanced use, see parameter `params.customFilePath.footer`
   custom = ""
-  # FixIt 0.2.0 | NEW whether to show Hugo and theme info
-  hugo = true
-  # FixIt 0.2.0 | NEW whether to show copyright info
+  # whether to show copyright info
   copyright = true
-  # FixIt 0.2.0 | NEW whether to show the author
+  # whether to show the author
   author = true
   # Site creation year
   since = 2021
-  # FixIt 0.2.14 | NEW whether to show total word count of site content
-  wordCount = true
   # FixIt 0.2.12 | NEW Public network security only in China (HTML format is supported)
   gov = ""
   # ICP info only in China (HTML format is supported)
   icp = ""
   # license info (HTML format is supported)
   license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
+  # FixIt 0.3.0 | NEW whether to show Hugo and theme info
+  [footer.powered]
+    enable = true
+    hugoLogo = true
+    themeLogo = true
   # FixIt 0.2.17 | CHANGED Site creation time
   [footer.siteTime]
     enable = false
@@ -146,22 +173,30 @@ disableThemeInject = false
     visitor = 0
     beian = 0
 
-# FixIt 0.2.0 | NEW Section (all posts) page config
+# FixIt 0.3.0 | NEW Archives page config (all pages of posts type)
+[archives]
+  # special amount of posts in archives page
+  paginate = 20
+  # date format (month and day)
+  dateFormat = "01-02"
+
+# Section page config (all pages in section)
 [section]
-  # special amount of posts in each section page
+  # special amount of pages in each section page
   paginate = 20
   # date format (month and day)
   dateFormat = "01-02"
   # amount of RSS pages
   rss = 10
-  # FixIt 0.2.13 | NEW recently updated posts settings
+  # FixIt 0.2.13 | NEW recently updated pages config
+  # TODO refactor to support archives, section, taxonomy and term
   [section.recentlyUpdated]
     enable = false
     rss = false
     days = 30
     maxCount = 10
 
-# FixIt 0.2.0 | NEW List (category or tag) page config
+# List (category or tag) page config
 [list]
   # special amount of posts in each list page
   paginate = 20
@@ -180,7 +215,7 @@ disableThemeInject = false
 
 # Home page config
 [home]
-  # FixIt 0.2.0 | NEW amount of RSS pages
+  # amount of RSS pages
   rss = 10
   # Home page profile
   [home.profile]
@@ -191,7 +226,7 @@ disableThemeInject = false
     avatarURL = ""
     # FixIt 0.2.17 | NEW identifier of avatar menu link
     avatarMenu = ""
-    # FixIt 0.2.7 | CHANGED title shown in home page (HTML format is supported)
+    # title shown in home page (HTML format is supported)
     title = ""
     # subtitle shown in home page
     subtitle = "This is my new Hugo FixIt site"
@@ -199,7 +234,7 @@ disableThemeInject = false
     typeit = true
     # whether to show social links
     social = true
-    # FixIt 0.2.0 | NEW disclaimer (HTML format is supported)
+    # disclaimer (HTML format is supported)
     disclaimer = ""
   # Home page posts
   [home.posts]
@@ -297,30 +332,40 @@ disableThemeInject = false
   Email = ""
   RSS = true
 
-# FixIt 0.2.0 | CHANGED Page config
+# Page config
 [page]
   # FixIt 0.2.18 | NEW whether to enable the author's avatar of the post
   authorAvatar = true
-  # FixIt 0.2.0 | NEW whether to hide a page from home page
+  # whether to hide a page from home page
   hiddenFromHomePage = false
-  # FixIt 0.2.0 | NEW whether to hide a page from search results
+  # whether to hide a page from search results
   hiddenFromSearch = false
-  # FixIt 0.2.0 | NEW whether to enable twemoji
+  # FixIt 0.3.0 | NEW whether to hide a page from RSS feed
+  hiddenFromRss = false
+  # FixIt 0.3.0 | NEW whether to hide a page from related posts
+  hiddenFromRelated = false
+  # whether to enable twemoji
   twemoji = false
   # whether to enable lightgallery
   # FixIt 0.2.18 | CHANGED if set to "force", images in the content will be forced to shown as the gallery.
   lightgallery = false
-  # FixIt 0.2.0 | NEW whether to enable the ruby extended syntax
+  # whether to enable the ruby extended syntax
   ruby = true
-  # FixIt 0.2.0 | NEW whether to enable the fraction extended syntax
+  # whether to enable the fraction extended syntax
   fraction = true
-  # FixIt 0.2.0 | NEW whether to enable the fontawesome extended syntax
+  # whether to enable the fontawesome extended syntax
   fontawesome = true
   # license info (HTML format is supported)
   license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
-  # whether to show link to Raw Markdown content of the content
+  # whether to show link to Raw Markdown content of the post
   linkToMarkdown = true
-  # FixIt 0.2.4 | NEW whether to show the full text content in RSS
+  # FixIt 0.3.0 | NEW whether to show link to view source code of the post
+  linkToSource = true
+  # FixIt 0.3.0 | NEW whether to show link to edit the post
+  linkToEdit = true
+  # FixIt 0.3.0 | NEW whether to show link to report issue for the post
+  linkToReport = true
+  # whether to show the full text content in RSS
   rssFullText = false
   # FixIt 0.2.13 | NEW Page style ["narrow", "normal", "wide", ...]
   pageStyle = "normal"
@@ -335,16 +380,20 @@ disableThemeInject = false
   endFlag = ""
   # FixIt 0.2.18 | NEW whether to enable instant.page
   instantPage = false
+  # FixIt 0.3.0 | NEW whether to enable collection list at the sidebar
+  collectionList = false
+  # FixIt 0.3.0 | NEW whether to enable collection navigation at the end of the post
+  collectionNavigation = false
 
   # FixIt 0.2.15 | NEW Repost config
   [page.repost]
     enable = false
     url = ""
-  # FixIt 0.2.0 | NEW Table of the contents config
+  # Table of the contents config
   [page.toc]
     # whether to enable the table of the contents
     enable = true
-    # FixIt 0.2.9 | NEW whether to keep the static table of the contents in front of the post
+    # whether to keep the static table of the contents in front of the post
     keepStatic = false
     # whether to make the table of the contents in the sidebar automatically collapsed
     auto = true
@@ -359,6 +408,19 @@ disableThemeInject = false
     warning = 180
     # If the article expires, close the comment or not
     closeComment = false
+  # FixIt 0.3.0 | NEW page heading config
+  [page.heading]
+    # used with `markup.tableOfContents.ordered` parameter
+    [page.heading.number]
+      # whether to enable auto heading numbering
+      enable = false
+      [page.heading.number.format]
+        h1 = "{title}"
+        h2 = "{h2} {title}"
+        h3 = "{h2}.{h3} {title}"
+        h4 = "{h2}.{h3}.{h4} {title}"
+        h5 = "{h2}.{h3}.{h4}.{h5} {title}"
+        h6 = "{h2}.{h3}.{h4}.{h5}.{h6} {title}"
   # FixIt 0.2.16 | CHANGED KaTeX mathematical formulas (https://katex.org)
   [page.math]
     enable = true
@@ -372,7 +434,7 @@ disableThemeInject = false
     copyTex = true
     # KaTeX extension mhchem
     mhchem = true
-  # FixIt 0.2.0 | NEW Code config
+  # Code config
   [page.code]
     # whether to show the copy button of the code block
     copy = true
@@ -380,14 +442,7 @@ disableThemeInject = false
     edit = true
     # the maximum number of lines of displayed code by default
     maxShownLines = 10
-  # FixIt 0.2.14 | NEW Post edit
-  [page.edit]
-    enable = false
-    # FixIt 0.2.15 | CHANGED Link for fork & edit
-    # url = "/edit/branch-name/subdirectory-name" # base on `params.gitRepo`
-    # url = "https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name" # full url
-    url = ""
-  # FixIt 0.2.0 | NEW Mapbox GL JS config (https://docs.mapbox.com/mapbox-gl-js)
+  # Mapbox GL JS config (https://docs.mapbox.com/mapbox-gl-js)
   [page.mapbox]
     # access token of Mapbox GL JS
     accessToken = ""
@@ -403,6 +458,15 @@ disableThemeInject = false
     scale = true
     # whether to add FullscreenControl
     fullscreen = true
+  # FixIt 0.3.0 | NEW [Experimental] cache remote images locally, see: https://github.com/hugo-fixit/FixIt/pull/362
+  [page.cacheRemoteImages]
+    enable = false
+    # replace remote image url with local image url (place in public/images/remote/)
+    replace = false
+  # FixIt 0.3.0 | NEW Related content config (https://gohugo.io/content-management/related/)
+  [page.related]
+    enable = false
+    count = 5
   # FixIt 0.2.17 | NEW Donate (Sponsor) settings
   [page.reward]
     enable = false
@@ -417,7 +481,7 @@ disableThemeInject = false
       # alipay = "/images/alipay.png"
       # paypal = "/images/paypal.png"
       # bitcoin = "/images/bitcoin.png"
-  # FixIt 0.2.0 | CHANGED social share links in post page
+  # social share links in post page
   [page.share]
     enable = true
     Twitter = true
@@ -434,11 +498,8 @@ disableThemeInject = false
     Line = false
     Instapaper = false
     Pocket = false
-    Digg = false
-    Stumbleupon = false
     Flipboard = false
     Weibo = true
-    Renren = false
     Myspace = false
     Blogger = false
     Baidu = false
@@ -453,7 +514,7 @@ disableThemeInject = false
     # FixIt 0.2.13 | NEW Artalk comment config (https://artalk.js.org/)
     [page.comment.artalk]
       enable = false
-      server = "https://yourdomain/api/"
+      server = "https://yourdomain"
       site = "默认站点"
       placeholder = ""
       noComment = ""
@@ -474,12 +535,12 @@ disableThemeInject = false
       imgUpload = true
       preview = true
       versionCheck = true
-    # FixIt 0.1.1 | NEW Disqus comment config (https://disqus.com)
+    # Disqus comment config (https://disqus.com)
     [page.comment.disqus]
       enable = false
       # Disqus shortname to use Disqus in posts
       shortname = ""
-    # FixIt 0.1.1 | NEW Gitalk comment config (https://github.com/gitalk/gitalk)
+    # Gitalk comment config (https://github.com/gitalk/gitalk)
     [page.comment.gitalk]
       enable = false
       owner = ""
@@ -502,7 +563,7 @@ disableThemeInject = false
       highlight = true
       enableQQ = false
       serverURLs = ""
-      # FixIt 0.2.6 | NEW emoji data file name, default is "google.yml"
+      # emoji data file name, default is "google.yml"
       # ["apple.yml", "google.yml", "facebook.yml", "twitter.yml"]
       # located in "themes/FixIt/assets/lib/valine/emoji/" directory
       # you can store your own data files in the same path under your project:
@@ -534,7 +595,7 @@ disableThemeInject = false
       numPosts = 10
       appId = ""
       languageCode = ""
-    # FixIt 0.2.0 | NEW Telegram comments config (https://comments.app)
+    # Telegram comments config (https://comments.app)
     [page.comment.telegram]
       enable = false
       siteID = ""
@@ -544,10 +605,10 @@ disableThemeInject = false
       colorful = true
       dislikes = false
       outlined = false
-    # FixIt 0.2.0 | NEW Commento comment config (https://commento.io)
+    # Commento comment config (https://commento.io)
     [page.comment.commento]
       enable = false
-    # FixIt 0.2.5 | NEW Utterances comment config (https://utteranc.es)
+    # Utterances comment config (https://utteranc.es)
     [page.comment.utterances]
       enable = false
       # owner/repo
@@ -584,7 +645,7 @@ disableThemeInject = false
       lightTheme = "light"
       darkTheme = "dark"
       lazyLoad = true
-  # FixIt 0.2.7 | NEW Third-party library config
+  # Third-party library config
   [page.library]
     [page.library.css]
       # someCSS = "some.css"
@@ -596,7 +657,7 @@ disableThemeInject = false
       # located in "assets/"
       # Or
       # someJavascript = "https://cdn.example.com/some.js"
-  # FixIt 0.2.10 | CHANGED Page SEO config
+  # Page SEO config
   [page.seo]
     # image URL
     images = []
@@ -605,7 +666,7 @@ disableThemeInject = false
       name = ""
       logoUrl = ""
 
-# FixIt 0.2.5 | NEW TypeIt config
+# TypeIt config
 [typeit]
   # typing speed between each step (measured in milliseconds)
   speed = 100
@@ -637,8 +698,6 @@ disableThemeInject = false
   content = ""
   # watermark's transparency
   opacity = 0.1
-  # parent of watermark's container
-  appendTo = ".wrapper>main"
   # watermark's width. unit: px
   width = 150
   # watermark's height. unit: px
@@ -670,14 +729,14 @@ disableThemeInject = false
   so = ""
   sogou = ""
 
-# FixIt 0.2.10 | NEW Site SEO config
+# Site SEO config
 [seo]
   # image URL
   image = ""
   # thumbnail URL
   thumbnailUrl = ""
 
-# FixIt 0.2.0 | NEW Analytics config
+# Analytics config
 [analytics]
   enable = false
   # Google Analytics
@@ -691,7 +750,7 @@ disableThemeInject = false
     # server url for your tracker if you're self hosting
     server = ""
 
-# FixIt 0.2.7 | NEW Cookie consent config
+# Cookie consent config
 [cookieconsent]
   enable = true
   # text strings used for Cookie consent banner
@@ -700,14 +759,14 @@ disableThemeInject = false
     dismiss = ""
     link = ""
 
-# FixIt 0.2.7 | CHANGED CDN config for third-party library files
+# CDN config for third-party library files
 [cdn]
   # CDN data file name, disabled by default ["jsdelivr.yml", "unpkg.yml", ...]
   # located in "themes/FixIt/assets/data/cdn/" directory
   # you can store your own data files in the same path under your project: "assets/data/cdn/"
   data = ""
 
-# FixIt 0.2.8 | NEW Compatibility config
+# Compatibility config
 [compatibility]
   # whether to use Polyfill.io to be compatible with older browsers
   polyfill = false
@@ -758,12 +817,6 @@ disableThemeInject = false
   # ["barber-shop", "big-counter", "bounce", "center-atom", "center-circle", "center-radar", "center-simple",
   # "corner-indicator", "fill-left", "flash", "flat-top", "loading-bar", "mac-osx", "material", "minimal"]
   theme = "minimal"
-
-# FixIt 0.2.18-lts.3 | NEW [Experimental] cache remote images locally, see: https://github.com/hugo-fixit/FixIt/pull/362
-[cacheRemoteImages]
-  enable = false
-  # replace remote image url with local image url
-  replace = false
 
 # FixIt 0.2.17 | NEW Define custom file paths
 # Create your custom files in site directory `layouts/partials/custom` and uncomment needed files below

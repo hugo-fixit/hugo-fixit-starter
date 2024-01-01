@@ -1,8 +1,8 @@
 # -------------------------------------------------------------------------------------
-# Author Configuration
+# Taxonomies Configuration
+# See: https://gohugo.io/content-management/taxonomies/#configure-taxonomies
 # -------------------------------------------------------------------------------------
 
-name = "Lruihao"
-email = "1024@lruihao.cn"
-link = "https://github.com/Lruihao"
-avatar = ""
+category = "categories"
+tag = "tags"
+collection = "collections"

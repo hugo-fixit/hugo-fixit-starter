@@ -28,7 +28,7 @@
 
 ### 准备
 
-[Hugo](https://gohugo.io/installation/): >= 0.109.0 (extended version)
+[Hugo](https://gohugo.io/installation/): >= 0.112.0 (extended version)
 
 ### 使用模板
 
