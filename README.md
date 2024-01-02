@@ -66,7 +66,7 @@ hugo
 
 ```bash
 # 手动更新主题
-hugo mod get -u github.com/hugo-fixit/FixIt@master
+hugo mod get -u github.com/hugo-fixit/FixIt@latest
 hugo mod tidy
 ```
 

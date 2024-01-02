@@ -21,7 +21,7 @@ jobs:
           extended: true
 
       - name: Update theme
-        run: hugo mod get -u github.com/hugo-fixit/FixIt
+        run: hugo mod get -u github.com/hugo-fixit/FixIt@latest
 
       - name: Tidy go.mod, go.sum
         run: hugo mod tidy

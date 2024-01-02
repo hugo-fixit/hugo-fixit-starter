@@ -66,7 +66,7 @@ Afterwards you can upgrade the theme with the following command:
 
 ```bash
 # Update theme manually
-hugo mod get -u github.com/hugo-fixit/FixIt@master
+hugo mod get -u github.com/hugo-fixit/FixIt@latest
 hugo mod tidy
 ```
 
