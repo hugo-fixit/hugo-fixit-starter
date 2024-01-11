@@ -113,7 +113,7 @@ disableThemeInject = false
   # Header title config
   [header.title]
     # URL of the LOGO
-    logo = "/hugo-fixit-blog-go/images/fixit.min.svg"
+    logo = "/hugo-fixit-starter/images/fixit.min.svg"
     # title name
     name = ""
     # you can add extra information before the name (HTML format is supported), such as icons

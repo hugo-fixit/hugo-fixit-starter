@@ -28,13 +28,14 @@
 
 ### 准备
 
-[Hugo](https://gohugo.io/installation/): >= 0.112.0 (extended version)
+- [Go](https://go.dev/dl/)
+- [Hugo](https://gohugo.io/installation/): >= 0.112.0 (extended version)
 
 ### 使用模板
 
 1. 点击 **Use this template**，在 GitHub 上创建你的存储库。
 
-    <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-blog-git/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
+    <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-starter1/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
 
 2. 存储库创建后，只需克隆并享受吧！
 
@@ -93,4 +94,4 @@ hugo mod tidy
   转到 Setting => Actions => General => Workflow permissions => 选中 "Read and write permissions"。
 </details>
 
-<!-- 此项目是使用 [hugo-fixit-blog-go](https://github.com/hugo-fixit/hugo-fixit-blog-go) 生成的。关于原始结构的文档可以在 [这里](https://github.com/hugo-fixit/hugo-fixit-blog-go#directory-structure) 找到。 -->
+<!-- 此项目是使用 [hugo-fixit-starter](https://github.com/hugo-fixit/hugo-fixit-starter) 生成的。 -->

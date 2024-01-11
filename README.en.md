@@ -28,13 +28,14 @@ For a complete quick start, see this [page](https://fixit.lruihao.cn/documentati
 
 ### Prerequisites
 
-[Hugo](https://gohugo.io/installation/): >= 0.112.0 (extended version)
+- [Go](https://go.dev/dl/)
+- [Hugo](https://gohugo.io/installation/): >= 0.112.0 (extended version)
 
 ### Use Template
 
 1. Click **Use this template**, and create your repository on GitHub.
 
-    <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-blog-git/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
+    <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-starter1/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
 
 2. Once the repository is created, just clone and enjoy it!
 
@@ -93,4 +94,4 @@ hugo mod tidy
   Head to Setting => Actions => General => Workflow permissions => Check "Read and write permissions".
 </details>
 
-<!-- This project was generated with [hugo-fixit-blog-go](https://github.com/hugo-fixit/hugo-fixit-blog-g0). Documentation about the original structure can be found [here](https://github.com/hugo-fixit/hugo-fixit-blog-go#directory-structure). -->
+<!-- This project was generated with [hugo-fixit-starter](https://github.com/hugo-fixit/hugo-fixit-starter). -->

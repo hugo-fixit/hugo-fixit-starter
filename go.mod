@@ -1,4 +1,4 @@
-module github.com/hugo-fixit/hugo-fixit-blog-go
+module github.com/hugo-fixit/hugo-fixit-starter
 
 go 1.19
 
