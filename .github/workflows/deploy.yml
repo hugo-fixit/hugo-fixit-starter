@@ -9,6 +9,8 @@ on:
       - 'data/**'
       - 'static/**'
       - 'themes/**'
+      - 'go.mod'
+      - 'go.sum'
   workflow_run:
     workflows: ['Update theme']
     types:
