@@ -2,4 +2,4 @@ module github.com/hugo-fixit/hugo-fixit-starter
 
 go 1.19
 
-require github.com/hugo-fixit/FixIt v0.3.6 // indirect
+require github.com/hugo-fixit/FixIt v0.3.7 // indirect
