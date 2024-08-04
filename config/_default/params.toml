@@ -4,7 +4,7 @@
 # -------------------------------------------------------------------------------------
 
 # FixIt 0.2.15 | CHANGED FixIt theme version
-version = "0.2.X" # e.g. "0.2.X", "0.2.15", "v0.2.15" etc.
+version = "0.3.X" # e.g. "0.2.X", "0.2.15", "v0.2.15" etc.
 # site description
 description = "This is my new Hugo FixIt site"
 # site keywords
@@ -138,9 +138,6 @@ disableThemeInject = false
 # Footer config
 [footer]
   enable = true
-  # FixIt 0.2.17 | CHANGED Custom content (HTML format is supported)
-  # For advanced use, see parameter `params.customFilePath.footer`
-  custom = ""
   # whether to show copyright info
   copyright = true
   # whether to show the author
@@ -331,6 +328,184 @@ disableThemeInject = false
   Phone = ""
   Email = ""
   RSS = true
+  # custom social links like the following
+  # [social.twitter]
+  #   id = "lruihao"
+  #   weight = 3
+  #   prefix = "https://twitter.com/"
+  #   Title = "Twitter"
+  #   [social.twitter.icon]
+  #     class = "fa-brands fa-x-twitter fa-fw"
+
+# TypeIt config
+[typeit]
+  # typing speed between each step (measured in milliseconds)
+  speed = 100
+  # blinking speed of the cursor (measured in milliseconds)
+  cursorSpeed = 1000
+  # character used for the cursor (HTML format is supported)
+  cursorChar = "|"
+  # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
+  duration = -1
+  # FixIt 0.2.18 | NEW whether your strings will continuously loop after completing
+  loop = false
+
+# FixIt 0.2.15 | NEW Mermaid config
+[mermaid]
+  # For values, see https://mermaid.js.org/config/theming.html#available-themes
+  themes = ["default", "dark"]
+
+# FixIt 0.2.12 | NEW PanguJS config
+[pangu]
+  # For Chinese writing
+  enable = false
+  selector = "article" # FixIt 0.2.17 | NEW
+
+# FixIt 0.2.12 | NEW Watermark config
+# Detail config see https://github.com/Lruihao/watermark#readme
+[watermark]
+  enable = false
+  # watermark's text (HTML format is supported)
+  content = ""
+  # watermark's transparency
+  opacity = 0.1
+  # watermark's width. unit: px
+  width = 150
+  # watermark's height. unit: px
+  height = 20
+  # row spacing of watermarks. unit: px
+  rowSpacing = 60
+  # col spacing of watermarks. unit: px
+  colSpacing = 30
+  # watermark's tangent angle. unit: deg
+  rotate = 15
+  # watermark's fontSize. unit: rem
+  fontSize = 0.85
+  # FixIt 0.2.13 | NEW watermark's fontFamily
+  fontFamily = "inherit"
+
+# FixIt 0.3.10 | NEW Busuanzi count
+[busuanzi]
+  # whether to enable busuanzi count
+  enable = false
+  # busuanzi count core script source. Default is https://vercount.one/js
+  source = "https://vercount.one/js"
+  # whether to show the site views
+  siteViews = true
+  # whether to show the page views
+  pageViews = true
+
+# Site verification code config for Google/Bing/Yandex/Pinterest/Baidu/360/Sogou
+[verification]
+  google = ""
+  bing = ""
+  yandex = ""
+  pinterest = ""
+  baidu = ""
+  so = ""
+  sogou = ""
+
+# Site SEO config
+[seo]
+  # image URL
+  image = ""
+  # thumbnail URL
+  thumbnailUrl = ""
+
+# Analytics config
+[analytics]
+  enable = false
+  # Google Analytics
+  [analytics.google]
+    id = ""
+    # whether to anonymize IP
+    anonymizeIP = true
+  # Fathom Analytics
+  [analytics.fathom]
+    id = ""
+    # server url for your tracker if you're self hosting
+    server = ""
+
+# Cookie consent config
+[cookieconsent]
+  enable = true
+  # text strings used for Cookie consent banner
+  [cookieconsent.content]
+    message = ""
+    dismiss = ""
+    link = ""
+
+# CDN config for third-party library files
+[cdn]
+  # CDN data file name, disabled by default ["jsdelivr.yml", "unpkg.yml", ...]
+  # located in "themes/FixIt/assets/data/cdn/" directory
+  # you can store your own data files in the same path under your project: "assets/data/cdn/"
+  data = ""
+
+# Compatibility config
+[compatibility]
+  # whether to use Polyfill.io to be compatible with older browsers
+  polyfill = false
+  # whether to use object-fit-images to be compatible with older browsers
+  objectFit = false
+
+# FixIt 0.2.14 | NEW GitHub banner in the top-right or top-left corner
+[githubCorner]
+  enable = false
+  permalink = "https://github.com/hugo-fixit/FixIt"
+  title = "View source on GitHub"
+  position = "right" # ["left", "right"]
+
+# FixIt 0.2.14 | NEW Gravatar config
+[gravatar]
+  # FixIt 0.2.18 | NEW Depends on the author's email, if the author's email is not set, the local avatar will be used
+  enable = false
+  # Gravatar host, default: "www.gravatar.com"
+  host = "www.gravatar.com" # ["cravatar.cn", "gravatar.loli.net", ...]
+  style = "" # ["", "mp", "identicon", "monsterid", "wavatar", "retro", "blank", "robohash"]
+
+# FixIt 0.2.16 | NEW Back to top
+[backToTop]
+  enable = true
+  # Scroll percent label in b2t button
+  scrollpercent = false
+
+# FixIt 0.2.16 | NEW Reading progress bar
+[readingProgress]
+  enable = false
+  # Available values: ["left", "right"]
+  start = "left"
+  # Available values: ["top", "bottom"]
+  position = "top"
+  reversed = false
+  light = ""
+  dark = ""
+  height = "2px"
+
+# FixIt 0.2.17 | NEW Progress bar in the top during page loading.
+# For more information: https://github.com/CodeByZach/pace
+[pace]
+  enable = false
+  # All available colors:
+  # ["black", "blue", "green", "orange", "pink", "purple", "red", "silver", "white", "yellow"]
+  color = "blue"
+  # All available themes:
+  # ["barber-shop", "big-counter", "bounce", "center-atom", "center-circle", "center-radar", "center-simple",
+  # "corner-indicator", "fill-left", "flash", "flat-top", "loading-bar", "mac-osx", "material", "minimal"]
+  theme = "minimal"
+
+# FixIt 0.2.15 | NEW Developer options
+# Select the scope named `public_repo` to generate personal access token,
+# Configure with environment variable `HUGO_PARAMS_GHTOKEN=xxx`, see https://gohugo.io/functions/os/getenv/#examples
+[dev]
+  enable = false
+  # Check for updates
+  c4u = false
+  # Mobile Devtools config
+  [dev.mDevtools]
+    enable = false
+    # "vConsole", "eruda" supported
+    type = "vConsole"
 
 # Page config
 [page]
@@ -346,8 +521,9 @@ disableThemeInject = false
   hiddenFromRelated = false
   # whether to enable twemoji
   twemoji = false
-  # whether to enable lightgallery
-  # FixIt 0.2.18 | CHANGED if set to "force", images in the content will be forced to shown as the gallery.
+  # FixIt 0.2.18 | CHANGED whether to enable lightgallery
+  # set to true, images in the content will be shown as the gallery if the image has a title, e.g. ![alt](src "title")
+  # set to "force", images in the content will be forced to shown as the gallery regardless of the image has a title or not, e.g. ![alt](src)
   lightgallery = false
   # whether to enable the ruby extended syntax
   ruby = true
@@ -367,7 +543,7 @@ disableThemeInject = false
   linkToReport = true
   # whether to show the full text content in RSS
   rssFullText = false
-  # FixIt 0.2.13 | NEW Page style ["narrow", "normal", "wide", ...]
+  # FixIt 0.3.10 | CHANGED Page style ["narrow", "normal", "wide", ...]
   pageStyle = "normal"
   # FixIt 0.2.17 | CHANGED Auto Bookmark Support
   # If true, save the reading progress when closing the page.
@@ -410,10 +586,14 @@ disableThemeInject = false
     closeComment = false
   # FixIt 0.3.0 | NEW page heading config
   [page.heading]
+    # FixIt 0.3.3 | NEW whether to capitalize automatic text of headings
+    capitalize = false
     # used with `markup.tableOfContents.ordered` parameter
     [page.heading.number]
       # whether to enable auto heading numbering
       enable = false
+      # FixIt 0.3.3 | NEW only enable in main section pages (default is posts)
+      onlyMainSection = true
       [page.heading.number.format]
         h1 = "{title}"
         h2 = "{h2} {title}"
@@ -434,11 +614,13 @@ disableThemeInject = false
     copyTex = true
     # KaTeX extension mhchem
     mhchem = true
-  # Code config
+  # Code wrapper config
   [page.code]
-    # whether to show the copy button of the code block
+    # FixIt 0.3.9 | NEW whether to enable the code wrapper
+    enable = true
+    # whether to show the copy button of the code wrapper
     copy = true
-    # FixIt 0.2.13 | NEW whether to show the edit button of the code block
+    # FixIt 0.2.13 | NEW whether to show the edit button of the code wrapper
     edit = true
     # the maximum number of lines of displayed code by default
     maxShownLines = 10
@@ -516,6 +698,8 @@ disableThemeInject = false
       enable = false
       server = "https://yourdomain"
       site = "默认站点"
+      # FixIt 0.3.3 | NEW whether use backend configuration
+      useBackendConf = false
       placeholder = ""
       noComment = ""
       sendBtn = ""
@@ -587,6 +771,7 @@ disableThemeInject = false
       texRenderer = false # FixIt 0.2.16 | NEW
       search = false # FixIt 0.2.16 | NEW
       recaptchaV3Key = "" # FixIt 0.2.16 | NEW
+      turnstileKey = "" # FixIt 0.3.8 | NEW
       reaction = false # FixIt 0.2.18 | NEW
     # Facebook comment config (https://developers.facebook.com/docs/plugins/comments)
     [page.comment.facebook]
@@ -637,11 +822,13 @@ disableThemeInject = false
       category = ""
       categoryId = ""
       mapping = ""
+      origin = "https://giscus.app" # FixIt NEW | 0.3.7 Or set it to your self-hosted domain
       strict = "0" # FixIt NEW | 0.2.18
       term = ""
       reactionsEnabled = "1"
       emitMetadata = "0"
       inputPosition = "bottom" # ["top", "bottom"]
+      lang = ""
       lightTheme = "light"
       darkTheme = "dark"
       lazyLoad = true
@@ -665,175 +852,3 @@ disableThemeInject = false
     [page.seo.publisher]
       name = ""
       logoUrl = ""
-
-# TypeIt config
-[typeit]
-  # typing speed between each step (measured in milliseconds)
-  speed = 100
-  # blinking speed of the cursor (measured in milliseconds)
-  cursorSpeed = 1000
-  # character used for the cursor (HTML format is supported)
-  cursorChar = "|"
-  # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
-  duration = -1
-  # FixIt 0.2.18 | NEW whether your strings will continuously loop after completing
-  loop = false
-
-# FixIt 0.2.15 | NEW Mermaid config
-[mermaid]
-  # For values, see https://mermaid.js.org/config/theming.html#available-themes
-  themes = ["default", "dark"]
-
-# FixIt 0.2.12 | NEW PanguJS config
-[pangu]
-  # For Chinese writing
-  enable = false
-  selector = "article" # FixIt 0.2.17 | NEW
-
-# FixIt 0.2.12 | NEW Watermark config
-# Detail config see https://github.com/Lruihao/watermark#readme
-[watermark]
-  enable = false
-  # watermark's text (HTML format is supported)
-  content = ""
-  # watermark's transparency
-  opacity = 0.1
-  # watermark's width. unit: px
-  width = 150
-  # watermark's height. unit: px
-  height = 20
-  # row spacing of watermarks. unit: px
-  rowSpacing = 60
-  # col spacing of watermarks. unit: px
-  colSpacing = 30
-  # watermark's tangent angle. unit: deg
-  rotate = 15
-  # watermark's fontSize. unit: rem
-  fontSize = 0.85
-  # FixIt 0.2.13 | NEW watermark's fontFamily
-  fontFamily = "inherit"
-
-# FixIt 0.2.12 | NEW Busuanzi count
-[ibruce]
-  enable = false
-  # Enable in post meta
-  enablePost = false
-
-# Site verification code config for Google/Bing/Yandex/Pinterest/Baidu/360/Sogou
-[verification]
-  google = ""
-  bing = ""
-  yandex = ""
-  pinterest = ""
-  baidu = ""
-  so = ""
-  sogou = ""
-
-# Site SEO config
-[seo]
-  # image URL
-  image = ""
-  # thumbnail URL
-  thumbnailUrl = ""
-
-# Analytics config
-[analytics]
-  enable = false
-  # Google Analytics
-  [analytics.google]
-    id = ""
-    # whether to anonymize IP
-    anonymizeIP = true
-  # Fathom Analytics
-  [analytics.fathom]
-    id = ""
-    # server url for your tracker if you're self hosting
-    server = ""
-
-# Cookie consent config
-[cookieconsent]
-  enable = true
-  # text strings used for Cookie consent banner
-  [cookieconsent.content]
-    message = ""
-    dismiss = ""
-    link = ""
-
-# CDN config for third-party library files
-[cdn]
-  # CDN data file name, disabled by default ["jsdelivr.yml", "unpkg.yml", ...]
-  # located in "themes/FixIt/assets/data/cdn/" directory
-  # you can store your own data files in the same path under your project: "assets/data/cdn/"
-  data = ""
-
-# Compatibility config
-[compatibility]
-  # whether to use Polyfill.io to be compatible with older browsers
-  polyfill = false
-  # whether to use object-fit-images to be compatible with older browsers
-  objectFit = false
-
-# FixIt 0.2.14 | NEW GitHub banner in the top-right or top-left corner
-[githubCorner]
-  enable = false
-  permalink = "https://github.com/hugo-fixit/FixIt"
-  title = "View source on GitHub"
-  position = "right" # ["left", "right"]
-
-# FixIt 0.2.14 | NEW Gravatar config
-[gravatar]
-  # FixIt 0.2.18 | NEW Depends on the author's email, if the author's email is not set, the local avatar will be used
-  enable = true
-  # Gravatar host, default: "www.gravatar.com"
-  host = "gravatar.loli.net" # ["cn.gravatar.com", "gravatar.loli.net", ...]
-  style = "" # ["", "mp", "identicon", "monsterid", "wavatar", "retro", "blank", "robohash"]
-
-# FixIt 0.2.16 | NEW Back to top
-[backToTop]
-  enable = true
-  # Scroll percent label in b2t button
-  scrollpercent = false
-
-# FixIt 0.2.16 | NEW Reading progress bar
-[readingProgress]
-  enable = false
-  # Available values: ["left", "right"]
-  start = "left"
-  # Available values: ["top", "bottom"]
-  position = "top"
-  reversed = false
-  light = ""
-  dark = ""
-  height = "2px"
-
-# FixIt 0.2.17 | NEW Progress bar in the top during page loading.
-# For more information: https://github.com/CodeByZach/pace
-[pace]
-  enable = false
-  # All available colors:
-  # ["black", "blue", "green", "orange", "pink", "purple", "red", "silver", "white", "yellow"]
-  color = "blue"
-  # All available themes:
-  # ["barber-shop", "big-counter", "bounce", "center-atom", "center-circle", "center-radar", "center-simple",
-  # "corner-indicator", "fill-left", "flash", "flat-top", "loading-bar", "mac-osx", "material", "minimal"]
-  theme = "minimal"
-
-# FixIt 0.2.17 | NEW Define custom file paths
-# Create your custom files in site directory `layouts/partials/custom` and uncomment needed files below
-[customFilePath]
-  # aside = "custom/aside.html"
-  # profile = "custom/profile.html"
-  # footer = "custom/footer.html"
-
-# FixIt 0.2.15 | NEW Developer options
-[dev]
-  enable = false
-  # Check for updates
-  c4u = false
-  # Please do not expose to public!
-  githubToken = ""
-  # Mobile Devtools config
-  [dev.mDevtools]
-    enable = false
-    # "vConsole", "eruda" supported
-    type = "vConsole"
