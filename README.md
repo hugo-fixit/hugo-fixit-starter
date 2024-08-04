@@ -29,7 +29,7 @@
 ### 准备
 
 - [Go](https://go.dev/dl/)
-- [Hugo](https://gohugo.io/installation/): >= 0.112.0 (extended version)
+- [Hugo](https://gohugo.io/installation/): >= 0.127.0 (extended version)
 
 ### 使用模板
 

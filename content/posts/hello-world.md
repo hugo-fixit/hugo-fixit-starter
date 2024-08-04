@@ -26,7 +26,7 @@ For a complete quick start, see this [page](https://fixit.lruihao.cn/documentati
 ### Prerequisites
 
 - [Go](https://go.dev/dl/)
-- [Hugo](https://gohugo.io/installation/): >= 0.112.0 (extended version)
+- [Hugo](https://gohugo.io/installation/): >= 0.127.0 (extended version)
 
 ### Use this Template
 

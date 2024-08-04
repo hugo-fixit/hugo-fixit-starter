@@ -459,7 +459,7 @@ disableThemeInject = false
 # FixIt 0.2.14 | NEW Gravatar config
 [gravatar]
   # FixIt 0.2.18 | NEW Depends on the author's email, if the author's email is not set, the local avatar will be used
-  enable = false
+  enable = true
   # Gravatar host, default: "www.gravatar.com"
   host = "www.gravatar.com" # ["cravatar.cn", "gravatar.loli.net", ...]
   style = "" # ["", "mp", "identicon", "monsterid", "wavatar", "retro", "blank", "robohash"]
