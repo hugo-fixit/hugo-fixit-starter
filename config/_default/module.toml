@@ -5,7 +5,9 @@
 
 [[imports]]
   path = "github.com/hugo-fixit/FixIt"
+[[imports]]
+  path = "github.com/hugo-fixit/shortcode-docs-bookmark"
 
 [hugoVersion]
   extended = true
-  min = "0.127.0"
+  min = "0.132.0"

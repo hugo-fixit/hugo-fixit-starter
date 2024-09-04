@@ -29,11 +29,11 @@
 ### 准备
 
 - [Go](https://go.dev/dl/)
-- [Hugo](https://gohugo.io/installation/): >= 0.127.0 (extended version)
+- [Hugo](https://gohugo.io/installation/): >= 0.132.0 (extended version)
 
 ### 使用模板
 
-1. 点击 **Use this template**，在 GitHub 上创建你的存储库。
+1. 点击 [**Use this template**](https://github.com/hugo-fixit/hugo-fixit-starter/generate)，在 GitHub 上创建你的存储库。
 
     <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-starter1/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
 
