@@ -1,0 +1,1 @@
+(()=>{var t=class{hello(){return console.log("custom.js: Hello FixIt!"),this}init(){return this.hello(),this}};window.fixitBlog=new t,document.addEventListener("DOMContentLoaded",()=>{window.fixitBlog.init()});})();
