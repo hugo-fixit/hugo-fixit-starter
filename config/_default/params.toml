@@ -22,8 +22,8 @@ images = []
 enablePWA = false
 # FixIt 0.2.14 | NEW whether to add external Icon for external links automatically
 externalIcon = false
-# FixIt 0.3.0 | NEW whether to reverse the order of the navigation menu
-navigationReverse = false
+# FixIt 0.3.13 | NEW whether to capitalize titles
+capitalizeTitles = true
 # FixIt 0.3.0 | NEW whether to add site title to the title of every page
 # remember to set up your site title in `hugo.toml` (e.g. title = "title")
 withSiteTitle = true
@@ -32,6 +32,8 @@ titleDelimiter = "-"
 # FixIt 0.3.0 | NEW whether to add site subtitle to the title of index page
 # remember to set up your site subtitle by `params.header.subtitle.name`
 indexWithSubtitle = false
+# FixIt 0.3.13 | NEW whether to show summary in plain text
+summaryPlainify = false
 # FixIt 0.2.14 | NEW FixIt will, by default, inject a theme meta tag in the HTML head on the home page only.
 # You can turn it off, but we would really appreciate if you don’t, as this is a good way to watch FixIt's popularity on the rise.
 disableThemeInject = false
@@ -134,6 +136,16 @@ disableThemeInject = false
   enable = false
   sticky = false
   showHome = false
+  # FixIt 0.3.13 | NEW
+  separator = "/"
+  capitalize = true
+
+# FixIt 0.3.10 | NEW Post navigation config
+[navigation]
+  # whether to show the post navigation in section pages scope
+  inSection = false
+  # whether to reverse the next/previous post navigation order
+  reverse = false
 
 # Footer config
 [footer]
@@ -185,19 +197,12 @@ disableThemeInject = false
   dateFormat = "01-02"
   # FixIt 0.3.10 | NEW Section feed config for RSS, Atom and JSON feed.
   [section.feed]
-    # The number of posts to include in the feed. Default is -1, which means all posts.
+    # The number of posts to include in the feed. If set to -1, all posts.
     limit = -1
     # whether to show the full text content in feed.
     fullText = false
-  # FixIt 0.2.13 | NEW recently updated pages config
-  # TODO refactor to support archives, section, taxonomy and term
-  [section.recentlyUpdated]
-    enable = false
-    rss = false
-    days = 30
-    maxCount = 10
 
-# List (category or tag) page config
+# Term list (category or tag) page config
 [list]
   # special amount of posts in each list page
   paginate = 20
@@ -205,10 +210,18 @@ disableThemeInject = false
   dateFormat = "01-02"
   # FixIt 0.3.10 | NEW Term list feed config for RSS, Atom and JSON feed.
   [list.feed]
-    # The number of posts to include in the feed. Default is -1, which means all posts.
+    # The number of posts to include in the feed. If set to -1, all posts.
     limit = -1
     # whether to show the full text content in feed.
     fullText = false
+
+# FixIt 0.3.13 | NEW recently updated pages config for archives, section and term list
+[recentlyUpdated]
+  archives = true
+  section = true
+  list = true
+  days = 30
+  maxCount = 10
 
 # FixIt 0.2.17 | NEW TagCloud config for tags page
 [tagcloud]
@@ -231,7 +244,7 @@ disableThemeInject = false
     avatarMenu = ""
     # title shown in home page (HTML format is supported)
     title = ""
-    # subtitle shown in home page
+    # subtitle shown in home page (HTML format is supported)
     subtitle = "This is my new Hugo FixIt site"
     # whether to use typeit animation for subtitle
     typeit = true
@@ -331,6 +344,7 @@ disableThemeInject = false
   TryHackMe = ""
   Douyin = ""
   TikTok = ""
+  Credly = ""
   Phone = ""
   Email = ""
   RSS = true
@@ -360,6 +374,25 @@ disableThemeInject = false
 [mermaid]
   # For values, see https://mermaid.js.org/config/theming.html#available-themes
   themes = ["default", "dark"]
+
+# FixIt 0.3.13 | NEW Admonitions custom config
+# See https://fixit.lruihao.cn/documentation/content-management/shortcodes/extended/admonition/#custom-admonitions
+# syntax: <type> = <icon>
+[admonition]
+  # ban = "fa-solid fa-ban"
+
+# FixIt 0.3.14 | NEW Task lists custom config
+# See https://fixit.lruihao.cn/documentation/content-management/advanced/#custom-task-lists
+# syntax: <sign> = <icon>
+[taskList]
+  # tip = "fa-regular fa-lightbulb"
+
+# FixIt 0.3.15 | NEW version shortcode config
+[repoVersion]
+  # url prefix for the release tag
+  url = "https://github.com/hugo-fixit/FixIt/releases/tag/v"
+  # project name
+  name = "FixIt"
 
 # FixIt 0.2.12 | NEW PanguJS config
 [pangu]
@@ -502,10 +535,30 @@ disableThemeInject = false
 
 # FixIt 0.3.10 | NEW Global Feed config for RSS, Atom and JSON feed.
 [feed]
-  # The number of posts to include in the feed. Default is -1, which means all posts.
+  # The number of posts to include in the feed. If set to -1, all posts.
   limit = 10
   # whether to show the full text content in feed.
   fullText = true
+  # Site Challenge for Follow: https://follow.is/
+  [feed.follow]
+    feedId = ""
+    userId = ""
+
+# FixIt 0.3.12 | NEW Custom partials config
+# Custom partials must be stored in the /layouts/partials/ directory.
+# Depends on open custom blocks https://fixit.lruihao.cn/references/blocks/
+[customPartials]
+  head = [
+    "inject/fixit-docs-bookmark.html",
+  ]
+  profile = []
+  aside = []
+  comment = []
+  footer = []
+  widgets = []
+  assets = []
+  postFooterBefore = []
+  postFooterAfter = []
 
 # FixIt 0.2.15 | NEW Developer options
 # Select the scope named `public_repo` to generate personal access token,
@@ -549,8 +602,6 @@ disableThemeInject = false
   linkToEdit = true
   # FixIt 0.3.0 | NEW whether to show link to report issue for the post
   linkToReport = true
-  # whether to show the full text content in RSS
-  rssFullText = false
   # FixIt 0.3.10 | CHANGED Page style ["narrow", "normal", "wide", ...]
   pageStyle = "normal"
   # FixIt 0.2.17 | CHANGED Auto Bookmark Support
@@ -583,6 +634,10 @@ disableThemeInject = false
     auto = true
     # FixIt 0.2.13 | NEW position of TOC ["left", "right"]
     position = "right"
+    # FixIt 0.3.12 | NEW supersede `markup.tableOfContents` settings
+    ordered = false
+    startLevel = 2
+    endLevel = 6
   # FixIt 0.2.13 | NEW Display a message at the beginning of an article to warn the reader that its content might be expired
   [page.expirationReminder]
     enable = false
@@ -596,7 +651,7 @@ disableThemeInject = false
   [page.heading]
     # FixIt 0.3.3 | NEW whether to capitalize automatic text of headings
     capitalize = false
-    # used with `markup.tableOfContents.ordered` parameter
+    # FixIt 0.3.12 | CHANGED must set `params.page.toc.ordered` to true
     [page.heading.number]
       # whether to enable auto heading numbering
       enable = false
@@ -637,9 +692,9 @@ disableThemeInject = false
     # access token of Mapbox GL JS
     accessToken = ""
     # style for the light theme
-    lightStyle = "mapbox://styles/mapbox/light-v9"
+    lightStyle = "mapbox://styles/mapbox/light-v11"
     # style for the dark theme
-    darkStyle = "mapbox://styles/mapbox/dark-v9"
+    darkStyle = "mapbox://styles/mapbox/dark-v11"
     # whether to add NavigationControl
     navigation = true
     # whether to add GeolocateControl
