@@ -29,7 +29,7 @@
 ### 准备
 
 - [Go](https://go.dev/dl/)
-- [Hugo](https://gohugo.io/installation/): >= 0.132.0 (extended version)
+- [Hugo](https://gohugo.io/installation/) (extended version)
 
 ### 使用模板
 
@@ -60,6 +60,14 @@ hugo server -e production
 ```bash
 hugo
 ```
+
+### 部署到 GitHub Pages
+
+1. 转到 Setting => Actions => General => Workflow permissions => 选中 "Read and write permissions"。
+2. 手动运行 Workflow: Actions => Hugo build and deploy => 点击 Run workflow 按钮。
+3. GitHub Pages 设置：Setting => Pages => Source: Deploy from a branch => Branch: `gh-pages` => Save。
+
+> 只有第一次部署时需要手动运行 Workflow，之后每次推送到 `main` 分支都会自动部署。
 
 ### 更新主题
 

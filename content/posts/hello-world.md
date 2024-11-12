@@ -24,7 +24,7 @@ For a complete quick start, see this [page](https://fixit.lruihao.cn/documentati
 ### Prerequisites
 
 - [Go](https://go.dev/dl/)
-- [Hugo](https://gohugo.io/installation/): >= 0.132.0 (extended version)
+- [Hugo](https://gohugo.io/installation/) (extended version)
 
 ### Use this Template
 
@@ -55,6 +55,14 @@ When your site is ready to deploy, run the following command:
 ```bash
 hugo
 ```
+
+### Deploy to GitHub Pages
+
+1. Head to Setting => Actions => General => Workflow permissions => Check "Read and write permissions".
+2. Manually run Workflow: Actions => Hugo build and deploy => Click Run workflow button.
+3. GitHub Pages settings: Setting => Pages => Source: Deploy from a branch => Branch: `gh-pages` => Save.
+
+> Only need to manually run the Workflow the first time you deploy, and it will be automatically deployed every time you push to the `main` branch.
 
 ### Update Theme
 
