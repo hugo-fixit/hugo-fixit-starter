@@ -4,7 +4,7 @@
   "description": "This is a quick start template for Hugo theme [FixIt](https://github.com/hugo-fixit/FixIt). It uses [Hugo submodule](https://gohugo.io/hugo-modules/) feature to load the theme.",
   "main": "index.js",
   "scripts": {
-    "build": "hugo -v --gc --minify",
+    "build": "hugo --gc --minify --logLevel info",
     "server": "hugo server -D --disableFastRender --navigateToChanged --bind 0.0.0.0",
     "server:production": "npm run server -- --environment production",
     "server:development": "HUGO_MODULE_WORKSPACE=hugo.work npm run server -- --ignoreVendorPaths \"**\"",
