@@ -44,6 +44,14 @@
     git clone --recursive https://github.com/<your_name>/<your_blog_repo>.git
     ```
 
+> [!TIP]
+> 仓库名决定了你的 GitHub Pages URL，例如：
+>
+> | 仓库名 | GitHub Pages |
+> | :--- | :--- |
+> | `<your_name>.github.io` | `https://<your_name>.github.io/` |
+> | `blog` | `https://<your_name>.github.io/blog/` |
+
 ### 启动站点
 
 ```bash
@@ -63,11 +71,13 @@ hugo
 
 ### 部署到 GitHub Pages
 
-1. 转到 Setting => Actions => General => Workflow permissions => 选中 "Read and write permissions"。
-2. 手动运行 Workflow: Actions => Hugo build and deploy => 点击 Run workflow 按钮。
-3. GitHub Pages 设置：Setting => Pages => Source: Deploy from a branch => Branch: `gh-pages` => Save。
+> [!NOTE]
+> 聪明的你可能已经注意到，模板初始化后的第一次 GitHub Actions 自动部署失败了。这是因为你还没有配置 Workflow 权限和 GitHub Pages。
 
-> 只有第一次部署时需要手动运行 Workflow，之后每次推送到 `main` 分支都会自动部署。
+1. 转到 Setting => Actions => General => Workflow permissions => 选中 "Read and write permissions"。
+2. GitHub Pages 设置：Setting => Pages => Source: GitHub Actions。
+3. 修改 `config/_default/hugo.toml` 文件中的 `baseURL` 为你的站点 URL。
+4. 提交上一步的修改到 `main` 分支，GitHub Actions 将自动打包并部署站点到 GitHub Pages。
 
 ### 更新主题
 

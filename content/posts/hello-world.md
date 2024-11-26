@@ -13,82 +13,11 @@ Welcome to Hugo FixIt! This is your very first post.
 
 <!--more-->
 
+## Documentation
+
 Head to the documentation page linked below for a complete guidence to get started with the [FixIt](https://github.com/hugo-fixit/FixIt) theme.
 
 {{< fixit-docs-bookmark >}}
-
-## Quick Start
-
-For a complete quick start, see this [page](https://fixit.lruihao.cn/documentation/getting-started/).
-
-### Prerequisites
-
-- [Go](https://go.dev/dl/)
-- [Hugo](https://gohugo.io/installation/) (extended version)
-
-### Use this Template
-
-1. Click [**Use this template**](https://github.com/hugo-fixit/hugo-fixit-starter/generate), and create your repository on GitHub.
-
-    <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-starter1/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
-
-2. Once the repository is created, just clone and enjoy it!
-
-    ```bash
-    # Clone with your own repository url
-    git clone --recursive https://github.com/<your_name>/<your_blog_repo>.git
-    ```
-
-### Launching the Site
-
-```bash
-# Development environment
-hugo server
-# Production environment
-hugo server -e production
-```
-
-### Build the Site
-
-When your site is ready to deploy, run the following command:
-
-```bash
-hugo
-```
-
-### Deploy to GitHub Pages
-
-1. Head to Setting => Actions => General => Workflow permissions => Check "Read and write permissions".
-2. Manually run Workflow: Actions => Hugo build and deploy => Click Run workflow button.
-3. GitHub Pages settings: Setting => Pages => Source: Deploy from a branch => Branch: `gh-pages` => Save.
-
-> Only need to manually run the Workflow the first time you deploy, and it will be automatically deployed every time you push to the `main` branch.
-
-### Update Theme
-
-Afterwards you can upgrade the theme with the following command:
-
-```bash
-# Update theme manually
-hugo mod get -u github.com/hugo-fixit/FixIt@latest
-hugo mod tidy
-```
-
-<details>
-  <summary>Start via NPM script</summary>
-
-  ```bash
-  # build the blog
-  npm run build
-  # run a local debugging server with watch
-  npm run server
-  # run a local debugging server in production environment
-  npm run server:production
-  # update theme submodules
-  npm run update:theme
-  ```
-
-</details>
 
 ## Feedback
 

@@ -44,6 +44,14 @@ For a complete quick start, see this [page](https://fixit.lruihao.cn/documentati
     git clone --recursive https://github.com/<your_name>/<your_blog_repo>.git
     ```
 
+> [!TIP]
+> The repository name determines your GitHub Pages URL, for example:
+>
+> | Repository Name | GitHub Pages |
+> | :--- | :--- |
+> | `<your_name>.github.io` | `https://<your_name>.github.io/` |
+> | `blog` | `https://<your_name>.github.io/blog/` |
+
 ### Launching the Site
 
 ```bash
@@ -63,11 +71,13 @@ hugo
 
 ### Deploy to GitHub Pages
 
-1. Head to Setting => Actions => General => Workflow permissions => Check "Read and write permissions".
-2. Manually run Workflow: Actions => Hugo build and deploy => Click Run workflow button.
-3. GitHub Pages settings: Setting => Pages => Source: Deploy from a branch => Branch: `gh-pages` => Save.
+> [!NOTE]
+> You may have noticed that the first automatic deployment of GitHub Actions after the template initialization failed. This is because you have not configured Workflow permissions and GitHub Pages.
 
-> Only need to manually run the Workflow the first time you deploy, and it will be automatically deployed every time you push to the `main` branch.
+1. Head to Setting => Actions => General => Workflow permissions => Check "Read and write permissions".
+2. GitHub Pages settings: Setting => Pages => Source: GitHub Actions.
+3. Modify `config/_default/hugo.toml` file `baseURL` to your site URL.
+4. Commit the changes from the previous step to the `main` branch, and GitHub Actions will automatically build and deploy the site to GitHub Pages.
 
 ### Update Theme
 
