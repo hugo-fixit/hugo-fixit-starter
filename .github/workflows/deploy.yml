@@ -59,7 +59,8 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: latest
+          # use the environment variable HUGO_VERSION as the hugo version, if not set, use `latest`.
+          hugo-version: ${{ vars.HUGO_VERSION || 'latest' }}
           extended: true
       - name: Hugo build
         run: hugo --gc --minify --logLevel info
