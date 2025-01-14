@@ -33,6 +33,14 @@
 
 ### 使用模板
 
+#### CLI
+
+```bash
+npx fixit-cli create my-blog
+```
+
+#### 手动
+
 1. 点击 [**Use this template**](https://github.com/hugo-fixit/hugo-fixit-starter/generate)，在 GitHub 上创建你的存储库。
 
     <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-starter1/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">

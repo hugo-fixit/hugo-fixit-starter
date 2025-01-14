@@ -33,6 +33,14 @@ For a complete quick start, see this [page](https://fixit.lruihao.cn/documentati
 
 ### Use Template
 
+#### CLI
+
+```bash
+npx fixit-cli create my-blog
+```
+
+#### Manual
+
 1. Click [**Use this template**](https://github.com/hugo-fixit/hugo-fixit-starter/generate), and create your repository on GitHub.
 
     <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-starter1/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
