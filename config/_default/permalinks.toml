@@ -4,4 +4,4 @@
 # -------------------------------------------------------------------------------------
 
 # posts = ":year/:month/:filename"
-posts = "posts/:slugorfilename"
+posts = "posts/:slugorcontentbasename"
