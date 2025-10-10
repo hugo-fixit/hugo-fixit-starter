@@ -65,7 +65,7 @@ jobs:
       - name: Hugo build
         run: hugo --gc --minify --logLevel info
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           # Upload only the public directory
           path: './public'
