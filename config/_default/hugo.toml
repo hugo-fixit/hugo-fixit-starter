@@ -1,24 +1,31 @@
 # -------------------------------------------------------------------------------------
 # Hugo Configuration
-# See: https://gohugo.io/getting-started/configuration/
+# See: https://gohugo.io/configuration/all/
 # -------------------------------------------------------------------------------------
 
-title = "Hugo FixIt Blog"
-baseURL = "https://hugo-fixit.github.io/hugo-fixit-starter/"
-# theme = "FixIt"
+# website title
+title = ""
+# Hostname (and path) to the root
+baseURL = "http://localhost:1313"
+# theme list
+# theme = ["FixIt"] # enable in your site config file
+# determines default content language ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "en"
+# language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
-hasCJKLanguage = true
+# language name ["English", "简体中文", "Français", "Polski", ...]
+languageName = "English"
+# whether to include Chinese/Japanese/Korean
+hasCJKLanguage = false
+# copyright description used only for seo schema
+copyright = ""
+# whether to use robots.txt
 enableRobotsTXT = true
-enableEmoji = true
+# whether to use git commit log
 enableGitInfo = true
-relativeURLs = false
-buildDrafts = false
-summaryLength = 150
-# ignore some build errors
-ignoreLogs = [
-  "error-get-remote-image",
-  "error-get-remote-json",
-  "error-remote-getjson",
-  "error-missing-instagram-accesstoken"
-]
+# whether to use emoji code
+enableEmoji = true
+# the main sections of a site
+# if set, the MainSections method on the Site object returns the given sections,
+# otherwise it returns the section with the most pages.
+# mainSections = ["posts"]

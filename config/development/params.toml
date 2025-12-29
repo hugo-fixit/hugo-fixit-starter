@@ -1,0 +1,26 @@
+description = "This is my new Hugo FixIt site"
+keywords = ["Hugo", "FixIt"]
+
+[author]
+name = "Lruihao"
+email = ""
+link = "https://github.com/Lruihao"
+avatar = "https://lruihao.cn/images/avatar.jpg"
+
+[app]
+title = "Hugo FixIt Blog"
+
+[header]
+
+[header.title]
+logo = "/hugo-fixit-starter/images/fixit.min.svg"
+
+[home]
+
+[home.profile]
+enable = true
+
+[customPartials]
+head = [
+  "inject/fixit-docs-bookmark.html",
+]

@@ -1,10 +1,7 @@
 # -------------------------------------------------------------------------------------
-# Privacy Configuration
-# See: https://gohugo.io/configuration/privacy/
+# Imaging Configuration
+# See: https://gohugo.io/configuration/imaging/
 # -------------------------------------------------------------------------------------
 
-[x]
-enableDNT = true
-
-[youtube]
-privacyEnhanced = true
+_merge = "shallow"
+quality = 75
