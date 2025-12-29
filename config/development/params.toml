@@ -13,7 +13,7 @@ title = "Hugo FixIt Blog"
 [header]
 
 [header.title]
-logo = "/hugo-fixit-starter/images/fixit.min.svg"
+logo = "/images/fixit.min.svg"
 
 [home]
 
