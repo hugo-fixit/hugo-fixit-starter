@@ -96,6 +96,8 @@ snippetLength = 30
 highlightTag = "em"
 # whether to use the absolute URL based on the baseURL in search index
 absoluteURL = false
+# FixIt 0.4.0 | NEW whether to enable anchorify for headings in search results
+anchorify = true
 
 [search.algolia]
 index = ""
@@ -391,6 +393,9 @@ RSS = true
 # weight = 3
 # prefix = "https://twitter.com/"
 # Title = "Twitter"
+
+# [params.social.twitter.icon]
+# class = "fa-brands fa-x-twitter fa-fw"
 
 # TypeIt config
 [typeit]
@@ -890,7 +895,7 @@ errorColor = "#ff4949"
 # custom macros map
 # syntax: <macro> = <definition>
 [page.math.katex.macros]
-# "\\f" = "#1f(#2)"  # usage: $\f{a}{b}$
+# "\\f" = "#1f(#2)" # usage: $\f{a}{b}$
 
 # MathJax server-side rendering (https://www.mathjax.org)
 # MathJax config: https://docs.mathjax.org/en/latest/options/index.html
@@ -903,7 +908,7 @@ cdn = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 # custom macros map
 # syntax: <macro> = <definition>
 [page.math.mathjax.macros]
-# bold = ["{\\bf #1}", 1]  # usage: $\bold{math}$
+# bold = ["{\\bf #1}", 1] # usage: $\bold{math}$
 
 [page.math.mathjax.loader]
 load = [ "ui/safe" ]
@@ -912,6 +917,7 @@ load = [ "ui/safe" ]
 # custom = "https://cdn.jsdelivr.net/gh/sonoisa/XyJax-v3@3.0.1/build/"
 
 # more loader config e.g source, dependencies, provides etc.
+
 [page.math.mathjax.options]
 enableMenu = true
 # HTML tags that won't be searched for math
