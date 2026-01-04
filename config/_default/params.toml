@@ -670,11 +670,11 @@ hotWords = true
 # FixIt 0.3.17 | NEW Summary AI config
 # See https://ai.zhheo.com/docs/summary.html
 [postSummary]
-enable = false
+enable = true
 # If you set `params.postChat.key`, you don't need to set `params.postSummary.key`
 key = ""
 title = ""
-# themes options: ["", "simple", "yanzhi"]
+# themes options: ["", "simple", "yanzhi", "menghuan"]
 theme = ""
 postURL = ""
 blacklist = ""
@@ -682,6 +682,11 @@ wordLimit = 1000
 typingAnimate = true
 beginningText = ""
 loadingText = true
+
+# FixIt 0.4.0 | NEW Podcast AI config
+# See https://ai.zhheo.com/docs/podcast.html
+[podcast]
+enable = false
 
 # FixIt 0.3.10 | NEW Global Feed config for RSS, Atom and JSON feed.
 [feed]
