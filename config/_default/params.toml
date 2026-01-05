@@ -670,7 +670,7 @@ hotWords = true
 # FixIt 0.3.17 | NEW Summary AI config
 # See https://ai.zhheo.com/docs/summary.html
 [postSummary]
-enable = true
+enable = false
 # If you set `params.postChat.key`, you don't need to set `params.postSummary.key`
 key = ""
 title = ""
@@ -817,6 +817,8 @@ pageStyle = "normal"
 # FixIt 0.2.17 | CHANGED Auto Bookmark Support
 # If true, save the reading progress when closing the page.
 autoBookmark = false
+# FixIt 0.4.0 | NEW whether to show the last modified time
+showLastmod = true
 # FixIt 0.2.17 | NEW whether to enable wordCount
 wordCount = true
 # FixIt 0.2.17 | NEW whether to enable readingTime
