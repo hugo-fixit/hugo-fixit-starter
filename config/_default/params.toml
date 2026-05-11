@@ -20,6 +20,8 @@ dateFormat = "2006-01-02"
 images = []
 # FixIt 0.2.12 | NEW enable PWA
 enablePWA = false
+# FixIt 0.2.14 | NEW whether to add external Icon for external links automatically
+externalIcon = false
 # FixIt 0.3.13 | NEW whether to capitalize titles
 capitalizeTitles = true
 # FixIt 0.3.0 | NEW whether to add site title to the title of every page
@@ -40,7 +42,7 @@ enableTranslationMerge = false
 # FixIt 0.4.4 | NEW whether to enable tooltip replacement for elements with title attribute, such as footnote references
 tooltip = true
 # FixIt 0.2.14 | NEW FixIt will, by default, inject a theme meta tag in the HTML head on the home page only.
-# you can turn it off, but we would really appreciate if you don't, as this is a good way to watch FixIt's popularity on the rise.
+# You can turn it off, but we would really appreciate if you don’t, as this is a good way to watch FixIt's popularity on the rise.
 disableThemeInject = false
 
 # Author Configuration
@@ -76,8 +78,8 @@ tileColor = "#da532c"
 
 # FixIt 0.2.12 | CHANGED Android browser theme color
 [app.themeColor]
-light = "#f6f8fa"
-dark = "#151b23"
+light = "#f8f8f8"
+dark = "#252627"
 
 # Search config
 [search]
@@ -118,9 +120,9 @@ ignoreFieldNorm = false
 
 # FixIt 0.3.16 | NEW Custom Search Engine (CSE)
 [cse]
-# search engine: ["google", "bing"]
+# Search Engine: ["google", "bing"]
 engine = ""
-# search results page URL (layout: search)
+# Search results page URL (layout: search)
 resultsPage = "/search/"
 
 # Google: https://programmablesearchengine.google.com/
@@ -137,12 +139,10 @@ cx = ""
 desktopMode = "sticky"
 # FixIt 0.2.13 | CHANGED mobile header mode ["sticky", "normal", "auto"]
 mobileMode = "auto"
-# FixIt 1.0.0 | NEW whether to enable header blur effect
-blur = false
 
 # Header title config
 [header.title]
-# URL of the logo
+# URL of the LOGO
 logo = ""
 # title name
 name = ""
@@ -183,7 +183,7 @@ enable = true
 copyright = true
 # whether to show the author
 author = true
-# site creation year
+# Site creation year
 since = ""
 # FixIt 0.2.12 | NEW Public network security only in China (HTML format is supported)
 gov = ""
@@ -204,8 +204,8 @@ enable = false
 animate = true
 icon = "fa-solid fa-heartbeat"
 pre = ""
-# e.g. "2021-12-18T16:15:22+08:00"
 value = ""
+# e.g. "2021-12-18T16:15:22+08:00"
 
 # FixIt 0.2.17 | NEW footer lines order, optional values: ["first", 0, 1, 2, 3, 4, 5, "last"]
 [footer.order]
@@ -231,7 +231,7 @@ dateFormat = "01-02"
 
 # FixIt 0.3.10 | NEW Section feed config for RSS, Atom and JSON feed.
 [section.feed]
-# the number of posts to include in the feed. If set to -1, all posts.
+# The number of posts to include in the feed. If set to -1, all posts.
 limit = -1
 # whether to show the full text content in feed.
 fullText = false
@@ -245,7 +245,7 @@ dateFormat = "01-02"
 
 # FixIt 0.3.10 | NEW Term list feed config for RSS, Atom and JSON feed.
 [list.feed]
-# the number of posts to include in the feed. If set to -1, all posts.
+# The number of posts to include in the feed. If set to -1, all posts.
 limit = -1
 # whether to show the full text content in feed.
 fullText = false
@@ -272,9 +272,9 @@ orderby = "name" # Order of tags, optional values: ["name", "count"]
 # Home page profile
 [home.profile]
 enable = false
-# FixIt 0.4.0 | NEW whether to show profile and content only in the first home page
+# FixIt 0.4.0 | NEW Whether to show profile and content only in the first home page
 onlyFirstPage = false
-# Gravatar email for preferred avatar in home page
+# Gravatar Email for preferred avatar in home page
 gravatarEmail = ""
 # URL of avatar shown in home page, default is author's avatar
 avatarURL = ""
@@ -296,8 +296,6 @@ disclaimer = ""
 enable = true
 # special amount of posts in each home posts page
 paginate = 6
-# whether to show featured image preview in home page post list
-imagePreview = true
 
 # FixIt 0.2.16 | CHANGED Social config about the author
 [social]
@@ -369,7 +367,7 @@ Ko-Fi = ""
 BuyMeaCoffee = ""
 Linktree = ""
 QQ = ""
-QQGroup = ""
+QQGroup = "" # https://qun.qq.com/join.html
 Diaspora = ""
 CSDN = ""
 Discord = ""
@@ -412,18 +410,11 @@ cursorChar = "|"
 # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
 duration = -1
 # FixIt 0.2.18 | NEW whether your strings will continuously loop after completing
-# [fixme] There is a bug when printing in groups
 loop = false
 
 # FixIt 0.2.15 | NEW Mermaid config
 # See http://fixit.lruihao.cn/documentation/content-management/diagrams-support/mermaid/
 [mermaid]
-# FixIt 1.0.0 | NEW whether to enable the Mermaid wrapper
-# When enabled, Mermaid diagrams are wrapped with diagram tabs and actions:
-# - pan/zoom (drag & ctrl+wheel)
-# - reset view
-# - download as SVG
-wrapper = true
 # FixIt 0.4.0 | NEW Mermaid ESM module CDN source
 # default is https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs
 cdn = ""
@@ -431,7 +422,7 @@ cdn = ""
 # default is empty, you can set it to a CDN source to enable ZenUML support
 # e.g. https://cdn.jsdelivr.net/npm/@mermaid-js/mermaid-zenuml/dist/mermaid-zenuml.esm.min.mjs
 zenuml = ""
-# for values, see https://mermaid.js.org/config/theming.html#available-themes
+# For values, see https://mermaid.js.org/config/theming.html#available-themes
 themes = [
   "default",
   "dark"
@@ -446,11 +437,11 @@ look = "handDrawn"
 fontFamily = ""
 # FixIt 0.4.0 | NEW Layout loaders from ESM module CDN sources (e.g., ELK layout engine)
 # Example: ["https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk/dist/mermaid-layout-elk.esm.min.mjs"]
-# this will enable additional layout options: ["elk", "elk.layered", "elk.stress", "elk.force", "elk.mrtree"]
+# This will enable additional layout options: ["elk", "elk.layered", "elk.stress", "elk.force", "elk.mrtree"]
 layoutLoaders = []
-# default layout algorithm for rendering diagrams
-# available options: "dagre" (default), "elk", "elk.layered", "elk.stress", "elk.force", "elk.mrtree"
-# note: ELK layouts require layoutLoaders to be configured first
+# Default layout algorithm for rendering diagrams
+# Available options: "dagre" (default), "elk", "elk.layered", "elk.stress", "elk.force", "elk.mrtree"
+# Note: ELK layouts require layoutLoaders to be configured first
 layout = "dagre"
 
 # FixIt 0.3.13 | NEW Admonitions custom config
@@ -474,12 +465,12 @@ name = "FixIt"
 
 # FixIt 0.2.12 | NEW PanguJS config
 [pangu]
-# for Chinese writing
+# For Chinese writing
 enable = false
 selector = "article" # FixIt 0.2.17 | NEW
 
 # FixIt 0.2.12 | NEW Watermark config
-# detail config see https://github.com/Lruihao/watermark#readme
+# Detail config see https://github.com/Lruihao/watermark#readme
 [watermark]
 enable = false
 # watermark's text (HTML format is supported)
@@ -624,9 +615,9 @@ scrollpercent = false
 # FixIt 0.2.16 | NEW Reading progress bar
 [readingProgress]
 enable = false
-# available values: ["left", "right"]
+# Available values: ["left", "right"]
 start = "left"
-# available values: ["top", "bottom"]
+# Available values: ["top", "bottom"]
 position = "top"
 reversed = false
 light = ""
@@ -634,25 +625,25 @@ dark = ""
 height = "2px"
 
 # FixIt 0.2.17 | NEW Progress bar in the top during page loading.
-# for more information: https://github.com/CodeByZach/pace
+# For more information: https://github.com/CodeByZach/pace
 [pace]
 enable = false
-# all available colors:
+# All available colors:
 # ["black", "blue", "green", "orange", "pink", "purple", "red", "silver", "white", "yellow"]
 color = "blue"
-# all available themes:
+# All available themes:
 # ["barber-shop", "big-counter", "bounce", "center-atom", "center-circle", "center-radar", "center-simple",
 # "corner-indicator", "fill-left", "flash", "flat-top", "loading-bar", "mac-osx", "material", "minimal"]
 theme = "minimal"
 
 # FixIt 0.3.17 | NEW PostChat AI config
-# based on your posts to build a knowledge base, support AI summary, AI search, and AI Chatbot.
-# get PostChat Key from my invitation link, thanks for your support!
+# Based on your posts to build a knowledge base, support AI summary, AI search, and AI Chatbot.
+# Get PostChat Key from my invitation link, thanks for your support!
 # https://ai.zhheo.com/console/login?InviteID=85041330
 [postChat]
 enable = false
 key = ""
-# how users initiate chats: ["iframe", "magic"]
+# How users initiate chats: ["iframe", "magic"]
 userMode = "iframe"
 addButton = true
 defaultInput = false
@@ -668,7 +659,7 @@ userTitle = ""
 userDesc = ""
 # dom container to be blacked out, e.g. [".aplayer"]
 blackDom = []
-# only for iframe mode
+# Only for iframe mode
 frameWidth = "" # e.g. "375px"
 frameHeight = "" # e.g. "600px"
 # only for magic mode
@@ -682,7 +673,7 @@ hotWords = true
 # See https://ai.zhheo.com/docs/summary.html
 [postSummary]
 enable = false
-# if you set `params.postChat.key`, you don't need to set `params.postSummary.key`
+# If you set `params.postChat.key`, you don't need to set `params.postSummary.key`
 key = ""
 title = ""
 # themes options: ["", "simple", "yanzhi", "menghuan"]
@@ -701,7 +692,7 @@ enable = false
 
 # FixIt 0.3.10 | NEW Global Feed config for RSS, Atom and JSON feed.
 [feed]
-# the number of posts to include in the feed. If set to -1, all posts.
+# The number of posts to include in the feed. If set to -1, all posts.
 limit = 10
 # whether to show the full text content in feed.
 fullText = true
@@ -712,7 +703,7 @@ feedId = ""
 userId = ""
 
 # FixIt 0.3.17 | NEW Image config
-# combined with Hugo's image processing option `imaging` for image optimisation
+# Combined with Hugo's image processing option `imaging` for image optimisation
 [image]
 # cache remote images for better optimisations
 cacheRemote = false
@@ -721,22 +712,6 @@ optimise = false
 # FixIt 0.4.0 | NEW A list of image file names or patterns to exclude from optimisation
 # e.g. ["no-optimize.jpg", "*.tiff", "images/exclude-*.webp"]
 blackList = []
-
-# FixIt 1.0.0 | NEW Link config
-[link]
-# whether to add external Icon for external links automatically
-external_icon = true
-
-# External link guard config
-# per-page override via front matter: link_guard (bool/object)
-[link.guard]
-enable = false
-# external link guard mode, available modes: ["modal"， "redirect"]
-# in "modal" mode, a dialog will pop up to ask for confirmation when users click external links
-# in "redirect" mode, users will be redirected to an intermediate page before visiting external links
-mode = "modal"
-# allowed domains (exact host or parent domain) will skip confirmation
-allow_domains = []
 
 # FixIt 0.4.0 | NEW Code block wrapper config
 # you can override the global config via Markdown attributes, for example:
@@ -789,17 +764,6 @@ folderSlash = false
 # list of file or folder names to ignore
 ignoreList = []
 
-# FixIt 1.0.0 | NEW Taxonomy icons config
-# works with [taxonomies]. Configure [taxonomies] first, otherwise taxonomy icons will not take effect.
-[taxonomy_icons]
-# syntax: <taxonomy> = [<title icon>, <card icon>, <term title icon>]
-# example:
-# topic = [
-#   "fa-solid fa-book-bookmark",
-#   "fa-solid fa-book",
-#   "fa-solid fa-book-open"
-# ]
-
 # FixIt 0.4.5 | NEW Print config
 [print]
 # whether to expand all admonitions before printing
@@ -812,8 +776,8 @@ expand_details = true
 expand_file_tree = false
 
 # FixIt 0.3.12 | NEW Custom partials config
-# custom partials must be stored in the /layouts/_partials/ directory.
-# depends on open custom blocks https://fixit.lruihao.cn/references/blocks/
+# Custom partials must be stored in the /layouts/_partials/ directory.
+# Depends on open custom blocks https://fixit.lruihao.cn/references/blocks/
 [customPartials]
 head = []
 menuDesktop = []
@@ -832,12 +796,14 @@ postFooterBefore = []
 postFooterAfter = []
 
 # FixIt 0.2.15 | NEW Developer options
-# select the scope named `public_repo` to generate personal access token,
-# configure with environment variable `HUGO_PARAMS_GHTOKEN=xxx`, see https://gohugo.io/functions/os/getenv/#examples
+# Select the scope named `public_repo` to generate personal access token,
+# Configure with environment variable `HUGO_PARAMS_GHTOKEN=xxx`, see https://gohugo.io/functions/os/getenv/#examples
 [dev]
 enable = false
-# check for updates
+# Check for updates
 c4u = false
+# FixIt 0.4.0 | NEW Enable debug mode
+debug = false
 
 # Page config
 # TODO migrate mapping key to `params` layer in the future
@@ -876,13 +842,11 @@ linkToEdit = true
 # FixIt 0.3.0 | NEW whether to show link to report issue for the post
 linkToReport = true
 # FixIt 0.3.20 | NEW whether to show link to view the post in VSCode
-# [todo] (string) migrate to link_to_editor config in the future
-# to support more editors (vscode://, trae://, etc.)
 linkToVscode = true
 # FixIt 0.3.10 | CHANGED Page style ["narrow", "normal", "wide", ...]
 pageStyle = "normal"
 # FixIt 0.2.17 | CHANGED Auto Bookmark Support
-# if true, save the reading progress when closing the page.
+# If true, save the reading progress when closing the page.
 autoBookmark = false
 # FixIt 0.4.0 | NEW whether to show the last modified time
 showLastmod = true
@@ -924,11 +888,11 @@ decreaseH1 = false
 # FixIt 0.2.13 | NEW Display a message at the beginning of an article to warn the reader that its content might be expired
 [page.expirationReminder]
 enable = false
-# display the reminder if the last modified time is more than 90 days ago
+# Display the reminder if the last modified time is more than 90 days ago
 reminder = 90
-# display warning if the last modified time is more than 180 days ago
+# Display warning if the last modified time is more than 180 days ago
 warning = 180
-# if the article expires, close the comment or not
+# If the article expires, close the comment or not
 closeComment = false
 
 # FixIt 0.3.0 | NEW page heading config
