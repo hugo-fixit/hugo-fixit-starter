@@ -4,7 +4,7 @@ name: Update theme
 on:
   schedule:
     # Update theme automatically everyday at 00:00 UTC
-    - cron: "0 0 * * *"
+    - cron: '0 0 * * *'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -29,11 +29,11 @@ jobs:
           # update FixIt theme to main branch (bleeding edge)
           # hugo mod get -u github.com/hugo-fixit/FixIt@main
           hugo mod tidy
-      
+
       - uses: actions/setup-node@v6
       - name: Fetch and split theme configuration
         run: |
-          npx fixit-cli split https://raw.githubusercontent.com/hugo-fixit/FixIt/refs/heads/main/hugo.toml
+          npx fixit-cli split latest
           rm -f config/_default/mediaTypes.toml
           rm -f config/_default/outputFormats.toml
 
