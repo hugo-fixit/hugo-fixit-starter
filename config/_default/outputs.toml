@@ -3,8 +3,8 @@
 # See: https://gohugo.io/configuration/outputs/
 # -------------------------------------------------------------------------------------
 
-# Options to make hugo output files, the optional values are below:
-# home = ["html", "rss", "archives", "offline", "readme", "baidu_urls", "search"]
+# options to make hugo output files, the optional values are below:
+# home = ["html", "rss", "archives", "offline", "link", "search", "readme", "baidu_urls"]
 # page = ["html", "markdown"]
 # section = ["html", "rss"]
 # taxonomy = ["html"]
@@ -16,6 +16,7 @@ home = [
   "rss",
   "archives",
   "offline",
+  "link",
   "search"
 ]
 page = [

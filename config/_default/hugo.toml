@@ -5,7 +5,7 @@
 
 # website title
 title = ""
-# Hostname (and path) to the root
+# hostname (and path) to the root
 baseURL = "http://localhost:1313"
 # theme list
 # theme = ["FixIt"] # enable in your site config file

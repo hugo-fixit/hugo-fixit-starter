@@ -17,7 +17,7 @@ guessSyntax = true
 lineNos = true
 lineNumbersInTable = true
 
-# Goldmark is from Hugo 0.60 the default library used for Markdown
+# goldmark is from Hugo 0.60 the default library used for Markdown
 # See: https://gohugo.io/configuration/markup/#goldmark
 [goldmark]
 duplicateResourceFiles = false
