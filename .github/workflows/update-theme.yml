@@ -30,7 +30,7 @@ jobs:
           # hugo mod get -u github.com/hugo-fixit/FixIt@main
           hugo mod tidy
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
       - name: Fetch and split theme configuration
         run: |
           npx fixit-cli split latest
